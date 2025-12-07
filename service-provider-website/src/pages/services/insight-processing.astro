@@ -1,27 +1,239 @@
 ---
 export const prerender = true;
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import { Icon } from 'astro-icon/components';
 ---
 
 <ServiceLayout
     title="Insight Processing"
-    subtitle="Enhance Efficiency and Client Satisfaction"
+    subtitle="Experience Counts. Building a Specialist Team in Your Mortgage Broking Practice."
     heroImage="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=2000"
     features={[
-        "Loan Submission & Processing",
-        "100% Australian-Based Team",
-        "Lender Liaison & Settlement",
-        "Aggregator Agnostic",
-        "Since 2006"
+        "100% Australian Based",
+        "Deep Industry Knowledge",
+        "Full Loan Cycle Support",
+        "Seamless Integration",
+        "Aggregator Agnostic"
     ]}
 >
-    <p class="lead text-xl text-gray-600 mb-6">
-        Insight Processing aims to help the broker improve efficiency and profitability by taking away from the broker or their admin team the hassle, tedium, and drudgery of doing their own Submissions and loan processing.
-    </p>
-    <p class="mb-6">
-        Since 2006, Insight Processing has proudly operated with a 100% Australian-based team. Our experienced and knowledgeable team work across all aggregator groups in Australia, bringing a deep understanding of local lending processes and industry standards.
-    </p>
-    <p>
-        Insight Processing takes over loan submission and/or the processing of the loan; dealing with the lender at all points of the process; obtaining instructions either from the broker or from the client direct. We remove the back office headache, client follow up, gathering outstanding documents and keep the borrower client and broker informed electronically and personally throughout the process.
-    </p>
+    <!-- Overview Section -->
+    <div class="space-y-8 animate-on-scroll">
+        <p class="text-lg leading-relaxed">
+            In 2006, Insight Processing identified a need to assist the finance professional in improving the overall profitability of their mortgage finance broking business. Like most financial transactions, mortgage finance is often a complex process, requiring regular contact with both the borrower client and the lender.
+        </p>
+        <p class="text-lg leading-relaxed">
+            Removing the back office headache, client follow up, gathering outstanding documents and keeping the borrower client and broker informed electronically and personally throughout the process eliminates a time-consuming business task. This takes pressure from all parties by an administration professional who is entirely conversant with lender procedures and understands the demands of the finance professional.
+        </p>
+    </div>
+
+    <!-- Why Outsource Section -->
+    <div class="mt-16 animate-on-scroll">
+        <h2 class="text-3xl font-bold mb-8 text-primary">Why Outsource?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-surface p-6 border border-subtle/20 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <Icon name="mdi:chart-line-variant" class="w-10 h-10 text-accent mb-4" />
+                <h3 class="text-xl font-bold mb-2">Enhance Efficiency</h3>
+                <p class="text-subtle mb-4">Build a specialist team in your practice. Focus on high-impact work while we handle the processing.</p>
+            </div>
+            <div class="bg-surface p-6 border border-subtle/20 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <Icon name="mdi:cash-multiple" class="w-10 h-10 text-accent mb-4" />
+                <h3 class="text-xl font-bold mb-2">Boost Profitability</h3>
+                <p class="text-subtle mb-4">Delegating back-office work can streamline operations, reduce costs, and enhance client satisfaction.</p>
+            </div>
+             <div class="bg-surface p-6 border border-subtle/20 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <Icon name="mdi:clock-check-outline" class="w-10 h-10 text-accent mb-4" />
+                <h3 class="text-xl font-bold mb-2">Save Time</h3>
+                <p class="text-subtle mb-4">Free up your time for revenue-generating activities. Outsource the top 5 time-consuming tasks.</p>
+            </div>
+            <div class="bg-surface p-6 border border-subtle/20 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <Icon name="mdi:account-group" class="w-10 h-10 text-accent mb-4" />
+                <h3 class="text-xl font-bold mb-2">Experience Counts</h3>
+                <p class="text-subtle mb-4">Since 2006, our 100% Australian-based team has been supporting brokers with deep local lending knowledge.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cost Effective Solution -->
+    <div class="mt-16 bg-primary/5 p-8 rounded-xl animate-on-scroll">
+        <h2 class="text-2xl font-bold mb-4 text-primary">A Cost Effective Business Solution</h2>
+        <p class="text-lg leading-relaxed mb-4">
+            When one assesses how much time is taken in the processing side of a loan transaction versus the interview and advice side, we can demonstrate that the “hourly chargeable rate” of the broker is 2 to 3 times higher if they focus on advice.
+        </p>
+        <p class="text-lg leading-relaxed">
+            Put simply, the cost of our processing centre is far less than the cost of the broker or their admin team. Even better, the efficiency through Insight Processing is far greater, leading to a very happy borrower client.
+        </p>
+    </div>
+
+    <!-- Services & Pricing -->
+    <div class="mt-20 animate-on-scroll">
+        <h2 class="text-3xl font-bold mb-8 text-primary">Our Services & Pricing</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Service 1 -->
+            <div class="bg-surface border border-subtle/20 rounded-xl overflow-hidden shadow-lg flex flex-col">
+                <div class="bg-primary p-6 text-main">
+                    <h3 class="text-xl font-bold uppercase tracking-widest">Submission Service</h3>
+                    <div class="text-3xl font-bold mt-2">A$50 - A$200</div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col">
+                    <p class="font-bold mb-4">Most popular: Data Entry & Submission ($220)</p>
+                    <ul class="space-y-2 mb-6 flex-1">
+                        <li class="flex items-start gap-2 text-sm"><Icon name="mdi:check" class="w-4 h-4 text-accent mt-1" /> Doc collection</li>
+                        <li class="flex items-start gap-2 text-sm"><Icon name="mdi:check" class="w-4 h-4 text-accent mt-1" /> Servicing data entry</li>
+                        <li class="flex items-start gap-2 text-sm"><Icon name="mdi:check" class="w-4 h-4 text-accent mt-1" /> Urgent submission options</li>
+                    </ul>
+                    <a href="/contact" class="block text-center py-2 px-4 border border-primary text-primary font-bold hover:bg-primary hover:text-main transition-colors rounded">Enquire</a>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="bg-surface border-2 border-accent rounded-xl overflow-hidden shadow-xl transform scale-105 z-10 flex flex-col">
+                <div class="absolute top-0 right-0 bg-accent text-white text-xs font-bold px-3 py-1 uppercase tracking-wider">Popular</div>
+                <div class="bg-primary p-6 text-main">
+                    <h3 class="text-xl font-bold uppercase tracking-widest">Loan Processing</h3>
+                    <div class="text-3xl font-bold mt-2">A$75 - A$290</div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col">
+                    <p class="font-bold mb-4">From receipt of submission to settlement</p>
+                    <ul class="space-y-2 mb-6 flex-1">
+                        <li class="flex items-start gap-2 text-sm"><Icon name="mdi:check" class="w-4 h-4 text-accent mt-1" /> Land and Construction</li>
+                        <li class="flex items-start gap-2 text-sm"><Icon name="mdi:check" class="w-4 h-4 text-accent mt-1" /> Top-ups / Increases</li>
+                        <li class="flex items-start gap-2 text-sm"><Icon name="mdi:check" class="w-4 h-4 text-accent mt-1" /> Commercial applications</li>
+                        <li class="flex items-start gap-2 text-sm"><Icon name="mdi:check" class="w-4 h-4 text-accent mt-1" /> Equipment finance</li>
+                    </ul>
+                    <a href="/contact" class="block text-center py-3 px-4 bg-accent text-white font-bold hover:bg-accent/90 transition-colors rounded">Enquire Now</a>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="bg-surface border border-subtle/20 rounded-xl overflow-hidden shadow-lg flex flex-col">
+                <div class="bg-primary p-6 text-main">
+                    <h3 class="text-xl font-bold uppercase tracking-widest">Admin Support</h3>
+                    <div class="text-3xl font-bold mt-2">A$280 - A$1000</div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col">
+                     <p class="font-bold mb-4">Project based & ongoing support</p>
+                    <ul class="space-y-2 mb-6 flex-1">
+                        <li class="flex items-start gap-2 text-sm"><Icon name="mdi:check" class="w-4 h-4 text-accent mt-1" /> Custom admin packages</li>
+                        <li class="flex items-start gap-2 text-sm"><Icon name="mdi:check" class="w-4 h-4 text-accent mt-1" /> Outside scope of processing</li>
+                        <li class="flex items-start gap-2 text-sm"><Icon name="mdi:check" class="w-4 h-4 text-accent mt-1" /> Loan tracking support</li>
+                    </ul>
+                    <a href="/contact" class="block text-center py-2 px-4 border border-primary text-primary font-bold hover:bg-primary hover:text-main transition-colors rounded">Enquire</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="mt-20 animate-on-scroll">
+        <h2 class="text-3xl font-bold mb-8 text-primary">What Our Clients Say</h2>
+         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <blockquote class="bg-surface p-8 rounded-lg border-l-4 border-accent shadow-sm">
+                <div class="flex text-accent mb-4">
+                    <Icon name="mdi:format-quote-open" class="w-8 h-8 opacity-50" />
+                </div>
+                <p class="italic text-subtle mb-6">"Shannon's thorough knowledge of Banking products and processes, along with her attention to detail helps see our client's loans approved and settled in a timely manner. I feel confident in the knowledge that my lending files are being actioned correctly."</p>
+                <cite class="not-italic font-bold block text-primary">— Stephen, Mortgage Broker (Sydney)</cite>
+                <span class="text-sm text-subtle">With Insight for 8 years</span>
+            </blockquote>
+             <blockquote class="bg-surface p-8 rounded-lg border-l-4 border-accent shadow-sm">
+                <div class="flex text-accent mb-4">
+                    <Icon name="mdi:format-quote-open" class="w-8 h-8 opacity-50" />
+                </div>
+                <p class="italic text-subtle mb-6">"I have been extremely happy with Vicki and Insight Processing. Having her behind the scenes chasing up documents and checking on settlements saves me a lot of time and worry on every loan I submit, which also allows me to focus on converting more of my leads. It's a win win."</p>
+                <cite class="not-italic font-bold block text-primary">— Peter, Mortgage Broker (Victoria)</cite>
+                <span class="text-sm text-subtle">With Insight for 4 years</span>
+            </blockquote>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="mt-20 animate-on-scroll">
+        <h2 class="text-3xl font-bold mb-8 text-primary">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+            <details class="group bg-surface rounded-lg border border-subtle/20 overflow-hidden">
+                <summary class="flex justify-between items-center font-bold lg:text-lg cursor-pointer p-6 hover:bg-gray-50 transition-colors">
+                    <span>What are your fees?</span>
+                    <span class="transition group-open:rotate-180">
+                        <Icon name="mdi:chevron-down" class="w-6 h-6" />
+                    </span>
+                </summary>
+                <div class="px-6 pb-6 text-subtle">
+                    We offer a very competitive fee structure offering processing only or the full service, including Full Submission. Contact us to discuss your requirements so that we may tailor a programme to meet your business needs.
+                </div>
+            </details>
+             <details class="group bg-surface rounded-lg border border-subtle/20 overflow-hidden">
+                <summary class="flex justify-between items-center font-bold lg:text-lg cursor-pointer p-6 hover:bg-gray-50 transition-colors">
+                    <span>Will I deal with one processor or several?</span>
+                    <span class="transition group-open:rotate-180">
+                        <Icon name="mdi:chevron-down" class="w-6 h-6" />
+                    </span>
+                </summary>
+                <div class="px-6 pb-6 text-subtle">
+                    We match you and your files with a particular processor, and that processor will be your contact. Continuity is essential, and we always strive to meet your expectations.
+                </div>
+            </details>
+             <details class="group bg-surface rounded-lg border border-subtle/20 overflow-hidden">
+                <summary class="flex justify-between items-center font-bold lg:text-lg cursor-pointer p-6 hover:bg-gray-50 transition-colors">
+                    <span>Is it faster to use Insight to get deals settled?</span>
+                    <span class="transition group-open:rotate-180">
+                        <Icon name="mdi:chevron-down" class="w-6 h-6" />
+                    </span>
+                </summary>
+                <div class="px-6 pb-6 text-subtle">
+                   Yes. Due to the volume being processed, we have developed unique relationships with lenders. They know our staff, and we meet with the lenders regularly to explore ways to improve the shared process.
+                </div>
+            </details>
+            <details class="group bg-surface rounded-lg border border-subtle/20 overflow-hidden">
+                <summary class="flex justify-between items-center font-bold lg:text-lg cursor-pointer p-6 hover:bg-gray-50 transition-colors">
+                    <span>What lenders do you deal with?</span>
+                    <span class="transition group-open:rotate-180">
+                        <Icon name="mdi:chevron-down" class="w-6 h-6" />
+                    </span>
+                </summary>
+                <div class="px-6 pb-6 text-subtle">
+                   We process deals with all lenders.
+                </div>
+            </details>
+             <details class="group bg-surface rounded-lg border border-subtle/20 overflow-hidden">
+                <summary class="flex justify-between items-center font-bold lg:text-lg cursor-pointer p-6 hover:bg-gray-50 transition-colors">
+                    <span>Do I still contact my client throughout the process?</span>
+                    <span class="transition group-open:rotate-180">
+                        <Icon name="mdi:chevron-down" class="w-6 h-6" />
+                    </span>
+                </summary>
+                <div class="px-6 pb-6 text-subtle">
+                   This will be your call whether you want to make the client contact. In our experience, your client is only too happy to be in direct contact with us.
+                </div>
+            </details>
+        </div>
+    </div>
 </ServiceLayout>
+
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    
+    gsap.registerPlugin(ScrollTrigger);
+
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    
+    elements.forEach(element => {
+        gsap.fromTo(element, 
+            { 
+                y: 50, 
+                opacity: 0 
+            },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 80%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+    });
+</script>

@@ -1,0 +1,42 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+
+  --color-main: #F6F2EE;
+  /* Was base */
+  --color-surface: #E9E3DC;
+  --color-primary: #2A2A2A;
+  /* Was text */
+  --color-subtle: #9B948F;
+  --color-accent: #6B4E3D;
+}
+
+/* Base Styles */
+body {
+  background-color: var(--color-main);
+  color: var(--color-primary);
+}
+
+/* Lenis Smooth Scroll */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}

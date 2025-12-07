@@ -1,0 +1,52 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<section class="relative h-screen flex items-center justify-center overflow-hidden bg-primary text-main">
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-accent/30 mix-blend-multiply z-10"></div>
+        <img 
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000" 
+            alt="Hero Background" 
+            class="w-full h-full object-cover"
+        />
+    </div>
+
+    <div class="relative z-20 container mx-auto px-4 md:px-12 text-center md:text-left">
+        <h1 class="hero-title text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-6 leading-tight text-white">
+            Innovating the <br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-main to-surface">Future of Business</span>
+        </h1>
+        <p class="hero-text text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto md:mx-0">
+            Where Australian Experience Meets Innovation. Empowering businesses through cutting-edge solutions and creative insights.
+        </p>
+        <div class="hero-cta flex flex-col md:flex-row gap-4 justify-center md:justify-start">
+            <a href="/contact" class="px-8 py-4 bg-accent text-white font-bold uppercase tracking-widest hover:bg-accent/80 transition-colors">
+                Start Project
+            </a>
+            <a href="/services" class="px-8 py-4 border border-white text-white font-bold uppercase tracking-widest hover:bg-white/20 transition-colors">
+                Our Services
+            </a>
+        </div>
+    </div>
+</section>
+
+<script>
+    import { gsap } from "gsap";
+    
+    const tl = gsap.timeline({ defaults: { ease: "power4.out", duration: 1.5 } });
+
+    tl.from(".hero-title", {
+        y: 100,
+        opacity: 0,
+        stagger: 0.2
+    })
+    .from(".hero-text", {
+        y: 50,
+        opacity: 0
+    }, "-=1")
+    .from(".hero-cta", {
+        y: 50,
+        opacity: 0
+    }, "-=1");
+</script>

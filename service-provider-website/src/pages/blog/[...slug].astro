@@ -1,0 +1,49 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Icon } from 'astro-icon/components';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+	const posts = await getCollection('blog');
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+		props: post,
+	}));
+}
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<BaseLayout title={`${post.data.title} | Antigravity Blog`}>
+    <article>
+        <div class="w-full h-[60vh] relative">
+            <div class="absolute inset-0 bg-accent/60 z-10"></div>
+            <img src={post.data.heroImage} alt={post.data.title} class="w-full h-full object-cover" />
+            <div class="absolute inset-0 z-20 flex items-center justify-center p-4">
+                <div class="text-center text-white max-w-4xl">
+                     <div class="flex items-center justify-center gap-4 text-sm font-bold uppercase tracking-widest mb-6 opacity-80">
+                        <span>{post.data.pubDate.toLocaleDateString('en-us', { year: 'numeric', month: 'short', day: 'numeric'})}</span>
+                        <span>•</span>
+                        <span>{post.data.author}</span>
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-4">{post.data.title}</h1>
+                    <p class="text-xl text-[--color-surface] max-w-2xl mx-auto">{post.data.description}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 md:px-12 py-20 bg-[--color-base]">
+            <div class="prose prose-lg prose-neutral prose-p:text-[--color-text] prose-headings:text-[--color-text] mx-auto">
+                <Content />
+            </div>
+            <div class="max-w-prose mx-auto mt-20 pt-10 border-t border-[--color-subtle]/20">
+                <a href="/blog" class="inline-flex items-center gap-2 font-bold uppercase tracking-widest text-sm text-[--color-text] hover:text-[--color-accent] transition-colors">
+                    <Icon name="mdi:arrow-left" class="w-4 h-4" /> Back to Blog
+                </a>
+            </div>
+        </div>
+    </article>
+</BaseLayout>

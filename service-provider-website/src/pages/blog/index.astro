@@ -1,0 +1,49 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<BaseLayout title="Blog | Antigravity">
+    <div class="pt-32 pb-20 px-4 md:px-12 bg-[--color-text] text-[--color-base]">
+        <div class="container mx-auto">
+            <h1 class="text-6xl md:text-8xl font-bold tracking-tighter mb-8">Insights</h1>
+            <p class="text-xl md:text-2xl text-[--color-subtle] max-w-3xl">
+                Thoughts, trends, and strategies from our team of experts.
+            </p>
+        </div>
+    </div>
+
+    <section class="py-20 bg-[--color-base]">
+        <div class="container mx-auto px-4 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                {posts.map((post) => (
+                    <a href={`/blog/${post.slug}/`} class="group block">
+                        <div class="overflow-hidden aspect-video mb-6 bg-[--color-surface]">
+                            <img 
+                                src={post.data.heroImage} 
+                                alt={post.data.title} 
+                                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                            />
+                        </div>
+                        <div class="flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-[--color-subtle] mb-3">
+                            <time datetime={post.data.pubDate.toISOString()}>
+                                {post.data.pubDate.toLocaleDateString('en-us', {
+                                    year: 'numeric',
+                                    month: 'short',
+                                    day: 'numeric',
+                                })}
+                            </time>
+                        </div>
+                        <h2 class="text-3xl font-bold mb-3 text-[--color-text] group-hover:text-[--color-accent] transition-colors duration-300">{post.data.title}</h2>
+                        <p class="text-[--color-text] leading-relaxed mb-4">{post.data.description}</p>
+                        <span class="inline-block text-sm font-bold uppercase tracking-widest border-b border-[--color-text] pb-1 text-[--color-text] group-hover:border-[--color-accent] group-hover:text-[--color-accent] transition-colors">Read Article</span>
+                    </a>
+                ))}
+            </div>
+        </div>
+    </section>
+</BaseLayout>

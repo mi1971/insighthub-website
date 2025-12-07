@@ -1,0 +1,89 @@
+---
+import '../styles/global.css';
+import '@fontsource/inter';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+	title: string;
+    description?: string;
+}
+
+const { title, description = "Premium Service Provider" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="bg-white text-gray-900 antialiased selection:bg-black selection:text-white">
+        <Header />
+		<main id="smooth-wrapper">
+            <div id="smooth-content">
+			    <slot />
+            </div>
+		</main>
+        <Footer />
+
+        <script>
+            import Lenis from 'lenis'
+            import { gsap } from "gsap";
+            import { ScrollTrigger } from "gsap/ScrollTrigger";
+            
+            gsap.registerPlugin(ScrollTrigger);
+
+            const lenis = new Lenis()
+
+            function raf(time) {
+                lenis.raf(time)
+                requestAnimationFrame(raf)
+            }
+
+            requestAnimationFrame(raf)
+
+            // Generic Fade Up Animation
+            const fadeUpElements = document.querySelectorAll('.fade-up');
+            fadeUpElements.forEach(elem => {
+                gsap.fromTo(elem, 
+                    { opacity: 0, y: 50 },
+                    {
+                        opacity: 1, 
+                        y: 0, 
+                        duration: 1, 
+                        ease: "power3.out",
+                        scrollTrigger: {
+                            trigger: elem,
+                            start: "top 85%",
+                        }
+                    }
+                );
+            });
+
+            // Staggered Fade Up for children
+            const staggerContainers = document.querySelectorAll('.stagger-parent');
+            staggerContainers.forEach(container => {
+                const children = container.querySelectorAll('.stagger-child');
+                gsap.fromTo(children, 
+                    { opacity: 0, y: 30 },
+                    {
+                        opacity: 1, 
+                        y: 0, 
+                        duration: 0.8, 
+                        stagger: 0.2,
+                        ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: container,
+                            start: "top 80%",
+                        }
+                    }
+                );
+            });
+        </script>
+	</body>
+</html>

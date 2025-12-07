@@ -1,0 +1,23 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+    title: string;
+    description: string;
+    icon?: string;
+    href: string;
+}
+
+const { title, description, icon = "mdi:arrow-right", href, class: className } = Astro.props;
+---
+
+<a href={href} class:list={["group block p-8 bg-main hover:bg-primary transition-colors duration-500 border border-subtle/20", className]}>
+    <div class="mb-6 text-accent group-hover:text-main transition-colors duration-500">
+        <Icon name={icon} class="w-12 h-12" />
+    </div>
+    <h3 class="text-2xl font-bold mb-3 group-hover:text-main transition-colors duration-500 font-sans">{title}</h3>
+    <p class="text-subtle group-hover:text-surface transition-colors duration-500 leading-relaxed">{description}</p>
+    <div class="mt-8 flex items-center text-sm font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 text-main">
+        Learn More <span class="ml-2">→</span>
+    </div>
+</a>

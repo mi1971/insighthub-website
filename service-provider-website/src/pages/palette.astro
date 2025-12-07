@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Color Palette">
+  <div class="container mx-auto px-4 py-32">
+    <h1 class="text-4xl font-bold mb-10 text-[--color-text]">Project Color Palette</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Base -->
+      <div class="bg-white p-6 rounded-lg shadow-sm">
+        <div class="h-32 w-full rounded-md shadow-inner border border-gray-200 mb-4" style="background-color: #F6F2EE;"></div>
+        <div>
+          <h2 class="text-xl font-bold text-gray-900">Base</h2>
+          <p class="font-mono text-gray-600 uppercase">#F6F2EE</p>
+          <p class="text-sm text-gray-500 mt-2">Main background</p>
+        </div>
+      </div>
+       <!-- Surface -->
+       <div class="bg-white p-6 rounded-lg shadow-sm">
+        <div class="h-32 w-full rounded-md shadow-inner border border-gray-200 mb-4" style="background-color: #E9E3DC;"></div>
+        <div>
+          <h2 class="text-xl font-bold text-gray-900">Surface</h2>
+          <p class="font-mono text-gray-600 uppercase">#E9E3DC</p>
+          <p class="text-sm text-gray-500 mt-2">Secondary background, cards</p>
+        </div>
+      </div>
+      <!-- Accent -->
+      <div class="bg-white p-6 rounded-lg shadow-sm">
+        <div class="h-32 w-full rounded-md shadow-inner border border-gray-200 mb-4" style="background-color: #6B4E3D;"></div>
+        <div>
+          <h2 class="text-xl font-bold text-gray-900">Accent</h2>
+          <p class="font-mono text-gray-600 uppercase">#6B4E3D</p>
+          <p class="text-sm text-gray-500 mt-2">Buttons, highlights, gradients</p>
+        </div>
+      </div>
+      <!-- Text -->
+      <div class="bg-white p-6 rounded-lg shadow-sm">
+        <div class="h-32 w-full rounded-md shadow-inner border border-gray-200 mb-4" style="background-color: #2A2A2A;"></div>
+        <div>
+          <h2 class="text-xl font-bold text-gray-900">Text</h2>
+          <p class="font-mono text-gray-600 uppercase">#2A2A2A</p>
+          <p class="text-sm text-gray-500 mt-2">Headings, body text</p>
+        </div>
+      </div>
+      <!-- Subtle -->
+      <div class="bg-white p-6 rounded-lg shadow-sm">
+        <div class="h-32 w-full rounded-md shadow-inner border border-gray-200 mb-4" style="background-color: #9B948F;"></div>
+        <div>
+          <h2 class="text-xl font-bold text-gray-900">Subtle</h2>
+          <p class="font-mono text-gray-600 uppercase">#9B948F</p>
+          <p class="text-sm text-gray-500 mt-2">Muted text, borders</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

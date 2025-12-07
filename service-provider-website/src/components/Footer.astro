@@ -1,0 +1,30 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+<footer class="bg-primary text-main py-20 px-4 md:px-12 mt-20">
+    <div class="container mx-auto flex flex-col md:flex-row justify-between">
+        <div>
+            <h2 class="text-3xl font-bold mb-4">Ready to start?</h2>
+            <p class="text-subtle">Let's build something amazing together.</p>
+        </div>
+        <div class="mt-10 md:mt-0 flex gap-12">
+                <div>
+                    <h4 class="font-bold mb-6 text-white uppercase tracking-widest">Connect</h4>
+                    <ul class="space-y-4 text-sm text-subtle">
+                        <li class="flex items-center gap-3">
+                            <Icon name="mdi:email-outline" class="w-5 h-5 text-accent" />
+                            <a href="mailto:matt@insighthub.au" class="hover:text-surface transition-colors">matt@insighthub.au</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <Icon name="mdi:phone-outline" class="w-5 h-5 text-accent" />
+                            <span>0413 999 951</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <Icon name="mdi:map-marker-outline" class="w-5 h-5 text-accent" />
+                            <span>Sunshine Coast, QLD</span>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+    </div>
+</footer>

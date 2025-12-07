@@ -1,0 +1,49 @@
+---
+interface Props {
+    image: string;
+    height?: string;
+    overlay?: boolean;
+    overlayClass?: string;
+}
+
+const { image, height = "h-screen", overlay = true, overlayClass = "bg-accent/30 mix-blend-multiply" } = Astro.props;
+---
+
+<section class={`relative w-full ${height} overflow-hidden parallax-section`}>
+    <div class="absolute inset-0 z-0 select-none">
+        <img 
+            src={image} 
+            alt="Background" 
+            class="w-full h-[120%] object-cover object-center parallax-bg -translate-y-[10%]"
+            loading="lazy"
+        />
+    </div>
+    {overlay && <div class={`absolute inset-0 z-10 ${overlayClass}`}></div>}
+    <div class="relative z-20 h-full w-full">
+        <slot />
+    </div>
+</section>
+
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    
+    gsap.registerPlugin(ScrollTrigger);
+
+    const sections = document.querySelectorAll('.parallax-section');
+
+    sections.forEach(section => {
+        const bg = section.querySelector('.parallax-bg');
+        
+        gsap.to(bg, {
+            y: "10%",
+            ease: "none",
+            scrollTrigger: {
+                trigger: section,
+                start: "top bottom", 
+                end: "bottom top",
+                scrub: true
+            }
+        });
+    });
+</script>

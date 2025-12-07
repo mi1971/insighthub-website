@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  # publish = "dist" # Leaning on auto-detection or root config
+  publish = "dist"
   environment = { NODE_VERSION = "20" }
 
 [functions]

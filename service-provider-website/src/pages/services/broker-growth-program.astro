@@ -1,6 +1,7 @@
 ---
 export const prerender = true;
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import { Icon } from 'astro-icon/components';
 ---
 
 <ServiceLayout
@@ -8,20 +9,174 @@ import ServiceLayout from '../../layouts/ServiceLayout.astro';
     subtitle="Your Marketing Assistant for Old School Relationship Building"
     heroImage="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=2000"
     features={[
-        "Build New Referral Connections",
-        "Strengthen Existing Relationships",
-        "Position as Trusted Authority",
-        "Consistent Leads",
-        "Old-School Values, Modern Strategy"
+        "Specialist Relationship Manager",
+        "Tailored Content Strategy",
+        "Consistent Networking",
+        "Pre-qualified Appointments",
+        "Proven ROI"
     ]}
 >
-    <p class="lead text-xl text-gray-600 mb-6">
-        Building relationships with referral partners is critical for a thriving mortgage brokerage, but who has the time? The Broker Growth Framework does it for you. We build, nurture, and strengthen your referral partnerships so you can focus on what you do best, serving your clients.
-    </p>
-    <p class="mb-6">
-        With over 20 years of hands-on broking experience behind us, we understand the power of strong referral networks. The Broker Growth Framework was built on what actually works in today’s market: real conversations, strategic touchpoints, and a return to the kind of old-school values that still build trust. We don’t just send emails. We pick up the phone. We remember birthdays.
-    </p>
-    <p>
-        Imagine having a marketing assistant who works tirelessly in the background: Building connections with new referral partners, positioning you as a trusted authority, and delivering consistent leads. You don’t need more noise. You need more connection. That’s where we come in.
-    </p>
+    <!-- Intro Section -->
+    <div class="space-y-8 animate-on-scroll">
+        <p class="text-lg leading-relaxed">
+            Building relationships with referral partners is critical for a thriving mortgage brokerage, but who has the time? The Broker Growth Framework does it for you. We build, nurture, and strengthen your referral partnerships so you can focus on what you do best—serving your clients.
+        </p>
+        <div class="bg-primary/5 p-8 rounded-xl border border-primary/10">
+            <h3 class="text-xl font-bold mb-4 text-primary">Why Us?</h3>
+            <p class="text-lg mb-4">
+                With over 20 years of hands-on broking experience, we understand the power of strong referral networks. The Broker Growth Framework was built on what actually works: real conversations, strategic touchpoints, and old-school values.
+            </p>
+            <p class="font-medium text-lg text-primary">
+                We don’t just send emails. We pick up the phone. We remember birthdays. We create personal connections.
+            </p>
+        </div>
+    </div>
+
+    <!-- How It Works Section -->
+    <div class="mt-20 animate-on-scroll">
+        <h2 class="text-3xl font-bold mb-10 text-primary">How It Works</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="relative p-6 bg-surface rounded-lg border border-subtle/20 shadow-sm hover:shadow-md transition-shadow">
+                <div class="absolute -top-4 -left-4 w-12 h-12 bg-accent text-white flex items-center justify-center rounded-full font-bold text-xl">1</div>
+                <h3 class="text-xl font-bold mb-4 mt-2">Approve & Provide Input</h3>
+                <p class="text-subtle">You approve marketing materials and initiatives we create, then we distribute them on your behalf.</p>
+            </div>
+            <div class="relative p-6 bg-surface rounded-lg border border-subtle/20 shadow-sm hover:shadow-md transition-shadow">
+                <div class="absolute -top-4 -left-4 w-12 h-12 bg-accent text-white flex items-center justify-center rounded-full font-bold text-xl">2</div>
+                <h3 class="text-xl font-bold mb-4 mt-2">Show Up to Appointments</h3>
+                <p class="text-subtle">We book pre-qualified meetings with referral partners for you. You just show up and build the bond.</p>
+            </div>
+            <div class="relative p-6 bg-surface rounded-lg border border-subtle/20 shadow-sm hover:shadow-md transition-shadow">
+                <div class="absolute -top-4 -left-4 w-12 h-12 bg-accent text-white flex items-center justify-center rounded-full font-bold text-xl">3</div>
+                <h3 class="text-xl font-bold mb-4 mt-2">Reap the Rewards</h3>
+                <p class="text-subtle">Watch your referral network grow and enjoy a steady stream of consistent leads.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- What You Get Section -->
+    <div class="mt-20 animate-on-scroll">
+        <h2 class="text-3xl font-bold mb-8 text-primary">What You Can Expect</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex gap-4 p-6 bg-surface rounded-lg border border-subtle/10">
+                <Icon name="mdi:flash" class="w-8 h-8 text-accent flex-shrink-0" />
+                <div>
+                    <h3 class="text-lg font-bold mb-2">Fast Results</h3>
+                    <p class="text-subtle">Start seeing stronger relationships with existing partners in as little as 2 weeks, and watch the leads start to grow.</p>
+                </div>
+            </div>
+            <div class="flex gap-4 p-6 bg-surface rounded-lg border border-subtle/10">
+                <Icon name="mdi:handshake" class="w-8 h-8 text-accent flex-shrink-0" />
+                <div>
+                    <h3 class="text-lg font-bold mb-2">Ongoing Engagement</h3>
+                    <p class="text-subtle">We keep your referral partners engaged and loyal with valuable resources that help them succeed.</p>
+                </div>
+            </div>
+            <div class="flex gap-4 p-6 bg-surface rounded-lg border border-subtle/10">
+                <Icon name="mdi:account-tie" class="w-8 h-8 text-accent flex-shrink-0" />
+                <div>
+                    <h3 class="text-lg font-bold mb-2">Minimal Effort</h3>
+                    <p class="text-subtle">No need to micromanage. We handle the relationship-building while you focus on scaling your business.</p>
+                </div>
+            </div>
+             <div class="flex gap-4 p-6 bg-surface rounded-lg border border-subtle/10">
+                <Icon name="mdi:chart-areaspline" class="w-8 h-8 text-accent flex-shrink-0" />
+                <div>
+                    <h3 class="text-lg font-bold mb-2">Sustainable Growth</h3>
+                    <p class="text-subtle">Our strategies are designed to deliver consistent, sustainable growth—not just quick wins.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Momentum and ROI Section -->
+    <div class="mt-20 bg-primary text-main p-8 md:p-12 rounded-2xl animate-on-scroll">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl font-bold mb-6">Momentum & Consistency</h2>
+                <p class="text-lg opacity-90 mb-6">
+                    "Success is the sum of small efforts repeated day in and day out."
+                </p>
+                <p class="opacity-80 leading-relaxed mb-6">
+                    Marketing often takes a backseat for brokers. We solve this by ensuring your business remains top-of-mind, creating a steady flow of opportunities that fuel growth.
+                </p>
+                 <ul class="space-y-3">
+                    <li class="flex items-center gap-3">
+                        <Icon name="mdi:check-circle" class="w-6 h-6 text-accent" />
+                        <span class="font-medium">More Leads</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <Icon name="mdi:check-circle" class="w-6 h-6 text-accent" />
+                        <span class="font-medium">Consistent Growth</span>
+                    </li>
+                     <li class="flex items-center gap-3">
+                        <Icon name="mdi:check-circle" class="w-6 h-6 text-accent" />
+                        <span class="font-medium">Loyal Referral Partners</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-white/10 p-8 rounded-xl backdrop-blur-sm border border-white/10">
+                <h3 class="text-2xl font-bold mb-4">The ROI</h3>
+                <p class="mb-6">
+                    On average, just <strong class="text-accent text-xl">4 additional settlements</strong> per year will allow you to break even on your investment.
+                </p>
+                <div class="text-3xl font-bold mb-2">$12,500 <span class="text-sm font-normal opacity-70">+ GST / year</span></div>
+                <p class="text-sm opacity-70 mb-8">Equivalent to hiring a marketing assistant for a fraction of the cost.</p>
+                <a href="/contact" class="block w-full py-4 bg-accent text-white text-center font-bold uppercase tracking-widest hover:bg-accent/90 transition-colors rounded">
+                    Start Growing
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Who is this for -->
+    <div class="mt-20 animate-on-scroll">
+         <h2 class="text-3xl font-bold mb-8 text-primary">Who Is This For?</h2>
+         <div class="bg-surface border-l-4 border-accent p-6 shadow-sm">
+             <ul class="space-y-4 text-lg text-subtle">
+                 <li class="flex items-start gap-3">
+                     <Icon name="mdi:arrow-right" class="w-6 h-6 text-accent mt-1 flex-shrink-0" />
+                     <span>Brokers with established relationships that could do with more nurturing.</span>
+                 </li>
+                 <li class="flex items-start gap-3">
+                     <Icon name="mdi:arrow-right" class="w-6 h-6 text-accent mt-1 flex-shrink-0" />
+                     <span>Brokers who know the value of "old school" relationship building but don't have the time to implement it.</span>
+                 </li>
+                 <li class="flex items-start gap-3">
+                     <Icon name="mdi:arrow-right" class="w-6 h-6 text-accent mt-1 flex-shrink-0" />
+                     <span>Brokers who want consistent leads through increased exposure and positioning as an industry expert.</span>
+                 </li>
+             </ul>
+         </div>
+    </div>
+
 </ServiceLayout>
+
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    
+    gsap.registerPlugin(ScrollTrigger);
+
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    
+    elements.forEach(element => {
+        gsap.fromTo(element, 
+            { 
+                y: 50, 
+                opacity: 0 
+            },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+    });
+</script>

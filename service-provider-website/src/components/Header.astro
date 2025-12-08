@@ -1,12 +1,83 @@
 ---
 ---
-<header class="fixed top-0 left-0 w-full z-50 bg-accent/90 text-white py-4 px-4 md:px-12 flex justify-between items-center transition-all duration-300 shadow-md">
-    <a href="/" class="text-3xl font-black tracking-tighter uppercase font-sans">INSIGHT HUB</a>
-    <nav class="hidden md:flex gap-10 text-base font-bold uppercase tracking-widest">
-        <a href="/services" class="hover:text-main transition-colors duration-300">Services</a>
+<header class="fixed top-0 left-0 w-full z-50 bg-accent/95 text-white py-4 px-4 md:px-12 transition-all duration-300 shadow-md backdrop-blur-sm">
+    <div class="flex justify-between items-center relative z-20">
+        <a href="/" class="text-3xl font-black tracking-tighter uppercase font-sans flex text-white relative z-50">INSIGHT HUB</a>
+        
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex gap-10 text-base font-bold uppercase tracking-widest">
+            <a href="/services" class="hover:text-main transition-colors duration-300">Services</a>
+            <a href="/blog" class="hover:text-main transition-colors duration-300">Blog</a>
+            <a href="/contact" class="hover:text-main transition-colors duration-300">Contact</a>
+        </nav>
 
-        <a href="/blog" class="hover:text-main transition-colors duration-300">Blog</a>
-        <a href="/contact" class="hover:text-main transition-colors duration-300">Contact</a>
-    </nav>
-    <button class="md:hidden text-white font-bold uppercase tracking-widest">Menu</button>
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none relative z-50 p-2">
+            <span class="sr-only">Toggle menu</span>
+            <div class="w-6 h-5 flex flex-col justify-between items-end group">
+                <span class="w-full h-0.5 bg-white transition-all duration-300 group-[.is-active]:rotate-45 group-[.is-active]:translate-y-2"></span>
+                <span class="w-3/4 h-0.5 bg-white transition-all duration-300 group-[.is-active]:opacity-0"></span>
+                <span class="w-full h-0.5 bg-white transition-all duration-300 group-[.is-active]:-rotate-45 group-[.is-active]:-translate-y-2.5"></span>
+            </div>
+        </button>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu" class="absolute top-full left-0 w-full bg-accent/95 border-t border-white/10 overflow-hidden transition-all duration-500 max-h-0 opacity-0 md:hidden shadow-xl backdrop-blur-sm -mt-1">
+        <nav class="flex flex-col p-6 space-y-4 text-center">
+            <a href="/services" class="mobile-link text-xl font-bold uppercase tracking-widest text-white hover:text-main transition-colors py-3 border-b border-white/5 mx-8">Services</a>
+            <a href="/blog" class="mobile-link text-xl font-bold uppercase tracking-widest text-white hover:text-main transition-colors py-3 border-b border-white/5 mx-8">Blog</a>
+            <a href="/contact" class="mobile-link text-xl font-bold uppercase tracking-widest text-white hover:text-main transition-colors py-3 mx-8">Contact</a>
+        </nav>
+    </div>
 </header>
+
+<script>
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const links = document.querySelectorAll('.mobile-link');
+    const iconDiv = btn?.querySelector('div');
+
+    function toggleMenu() {
+        const isOpen = btn?.getAttribute('aria-expanded') === 'true';
+        
+        if (isOpen) {
+            // Close
+            menu?.classList.remove('max-h-screen', 'opacity-100');
+            menu?.classList.add('max-h-0', 'opacity-0');
+            iconDiv?.classList.remove('is-active');
+            btn?.setAttribute('aria-expanded', 'false');
+        } else {
+            // Open
+            menu?.classList.remove('max-h-0', 'opacity-0');
+            menu?.classList.add('max-h-screen', 'opacity-100');
+            iconDiv?.classList.add('is-active');
+            btn?.setAttribute('aria-expanded', 'true');
+        }
+    }
+
+    btn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMenu();
+    });
+
+    // Close when clicking a link
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+             // Close
+            menu?.classList.remove('max-h-screen', 'opacity-100');
+            menu?.classList.add('max-h-0', 'opacity-0');
+            iconDiv?.classList.remove('is-active');
+            btn?.setAttribute('aria-expanded', 'false');
+        });
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+        const target = e.target as HTMLElement;
+        const isOpen = btn?.getAttribute('aria-expanded') === 'true';
+        if (isOpen && !menu?.contains(target) && !btn?.contains(target)) {
+            toggleMenu();
+        }
+    });
+</script>

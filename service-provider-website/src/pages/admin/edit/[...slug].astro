@@ -1,0 +1,250 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { getFile } from "../../../lib/github";
+// @ts-ignore
+import matter from "gray-matter";
+
+export const prerender = false;
+
+if (!Astro.cookies.has("auth_token")) {
+    return Astro.redirect("/admin/login");
+}
+
+const { slug } = Astro.params;
+const isNew = slug === "new";
+
+let post = {
+    title: "",
+    description: "",
+    pubDate: new Date().toISOString().split("T")[0],
+    author: "Antigravity Team",
+    heroImage: "/blog-placeholder-about.jpg",
+    content: "",
+};
+
+let sha = "";
+let filePath = "";
+
+if (!isNew && slug) {
+    try {
+        filePath = `src/content/blog/${slug}`;
+        const file = await getFile(filePath);
+        if (file && file.content) {
+            sha = file.sha;
+            const parsed = matter(file.content);
+            post = {
+                title: parsed.data.title || "",
+                description: parsed.data.description || "",
+                pubDate: parsed.data.pubDate
+                    ? new Date(parsed.data.pubDate).toISOString().split("T")[0]
+                    : "",
+                author: parsed.data.author || "",
+                heroImage: parsed.data.heroImage || "",
+                content: parsed.content || "",
+            };
+        }
+    } catch (e) {
+        console.error("Error loading post:", e);
+    }
+}
+---
+
+<BaseLayout title={isNew ? "New Post" : "Edit Post"}>
+    <div class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="mb-8 flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-gray-900">
+                {isNew ? "Create New Post" : `Editing: ${slug}`}
+            </h1>
+            <a href="/admin" class="text-indigo-600 hover:text-indigo-900"
+                >Back to Dashboard</a
+            >
+        </div>
+
+        <form
+            id="editor-form"
+            class="space-y-6 bg-white shadow px-4 py-5 sm:rounded-lg sm:p-6"
+        >
+            <input type="hidden" id="sha" value={sha} />
+            <input type="hidden" id="original-slug" value={slug} />
+            <input type="hidden" id="is-new" value={isNew.toString()} />
+
+            <div class="grid grid-cols-1 gap-6">
+                <div>
+                    <label
+                        for="title"
+                        class="block text-sm font-medium text-gray-700"
+                        >Title</label
+                    >
+                    <input
+                        type="text"
+                        name="title"
+                        id="title"
+                        value={post.title}
+                        required
+                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    />
+                </div>
+
+                <div>
+                    <label
+                        for="description"
+                        class="block text-sm font-medium text-gray-700"
+                        >Description</label
+                    >
+                    <textarea
+                        name="description"
+                        id="description"
+                        rows="3"
+                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        >{post.description}</textarea
+                    >
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label
+                            for="pubDate"
+                            class="block text-sm font-medium text-gray-700"
+                            >Publish Date</label
+                        >
+                        <input
+                            type="date"
+                            name="pubDate"
+                            id="pubDate"
+                            value={post.pubDate}
+                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        />
+                    </div>
+
+                    <div>
+                        <label
+                            for="author"
+                            class="block text-sm font-medium text-gray-700"
+                            >Author</label
+                        >
+                        <input
+                            type="text"
+                            name="author"
+                            id="author"
+                            value={post.author}
+                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        />
+                    </div>
+                </div>
+
+                <div>
+                    <label
+                        for="heroImage"
+                        class="block text-sm font-medium text-gray-700"
+                        >Hero Image URL</label
+                    >
+                    <input
+                        type="text"
+                        name="heroImage"
+                        id="heroImage"
+                        value={post.heroImage}
+                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    />
+                </div>
+
+                <div>
+                    <label
+                        for="content"
+                        class="block text-sm font-medium text-gray-700"
+                        >Content (Markdown)</label
+                    >
+                    <textarea
+                        name="content"
+                        id="content"
+                        rows="20"
+                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm font-mono"
+                        >{post.content}</textarea
+                    >
+                    <p class="mt-2 text-sm text-gray-500">
+                        Supports Markdown formatting.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex justify-end">
+                <button
+                    type="submit"
+                    id="save-btn"
+                    class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                >
+                    Save Post
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document
+            .getElementById("editor-form")
+            .addEventListener("submit", async (e) => {
+                e.preventDefault();
+                const btn = document.getElementById("save-btn");
+                const originalText = btn.innerText;
+                btn.innerText = "Saving...";
+                btn.disabled = true;
+
+                const formData = new FormData(e.target);
+                const data = Object.fromEntries(formData.entries());
+
+                const isNew =
+                    document.getElementById("is-new").value === "true";
+                const originalSlug =
+                    document.getElementById("original-slug").value;
+                const sha = document.getElementById("sha").value;
+
+                // Generate slug from title if new, else use existing unless passed (not supporting rename easily yet)
+                let filename = originalSlug;
+                if (isNew) {
+                    const slug = data.title
+                        .toLowerCase()
+                        .replace(/[^a-z0-9]+/g, "-")
+                        .replace(/(^-|-$)+/g, "");
+                    filename = `${slug}.md`;
+                }
+
+                const payload = {
+                    filename,
+                    frontmatter: {
+                        title: data.title,
+                        description: data.description,
+                        pubDate: data.pubDate,
+                        author: data.author,
+                        heroImage: data.heroImage,
+                    },
+                    content: data.content,
+                    sha: isNew ? undefined : sha,
+                };
+
+                try {
+                    const res = await fetch("/api/blog/save", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(payload),
+                    });
+
+                    if (res.ok) {
+                        alert("Saved successfully!");
+                        if (isNew) {
+                            window.location.href = `/admin/edit/${filename}`;
+                        } else {
+                            // Reload to get new SHA
+                            window.location.reload();
+                        }
+                    } else {
+                        const err = await res.json();
+                        alert(`Error saving: ${err.message}`);
+                    }
+                } catch (err) {
+                    alert(`Error saving: ${err.message}`);
+                } finally {
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                }
+            });
+    </script>
+</BaseLayout>

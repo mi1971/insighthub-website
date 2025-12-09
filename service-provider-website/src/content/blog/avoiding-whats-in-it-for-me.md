@@ -8,7 +8,7 @@ author: Linda Ireland
 heroImage: >-
   https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=1200
 ---
-The biggest mistake many professionals make in relationship building is approaching it with a transactional mindset. When you focus solely on what you can gain, you risk alienating potential partners. Instead, think of how you can serve them—true success comes from creating mutually beneficial relationships.
+Often, the biggest mistake many professionals make in relationship building is approaching it with a transactional mindset. When you focus solely on what you can gain, you risk alienating potential partners. Instead, think of how you can serve them—true success comes from creating mutually beneficial relationships.
 
 ## The Wrong Approach: “What’s In It for Me?”
 

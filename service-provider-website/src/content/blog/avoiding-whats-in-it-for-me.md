@@ -1,11 +1,13 @@
 ---
-title: "Avoiding the “What’s In It for Me?” Trap in Relationship Building"
-description: "How shifting from a transactional to a service-oriented mindset builds lasting business relationships."
-pubDate: "Dec 10 2024"
-heroImage: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=1200"
-author: "Linda Ireland"
+title: Avoiding “What’s In It for Me?” Trap in Relationship Building
+description: >-
+  How shifting from a transactional to a service-oriented mindset builds lasting
+  business relationships.
+pubDate: '2024-12-09'
+author: Linda Ireland
+heroImage: >-
+  https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=1200
 ---
-
 The biggest mistake many professionals make in relationship building is approaching it with a transactional mindset. When you focus solely on what you can gain, you risk alienating potential partners. Instead, think of how you can serve them—true success comes from creating mutually beneficial relationships.
 
 ## The Wrong Approach: “What’s In It for Me?”

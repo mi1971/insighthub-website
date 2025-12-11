@@ -1,0 +1,55 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+    title: string;
+    text: string;
+    href?: string;
+    buttonText?: string;
+}
+
+const {
+    title,
+    text,
+    href = "/contact",
+    buttonText = "Enquire Now",
+} = Astro.props;
+---
+
+<div
+    class="relative rounded-2xl overflow-hidden text-center p-10 md:p-16 border border-subtle/20 animate-on-scroll"
+>
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+        <img
+            src="/footer-bg.jpg"
+            alt="Background"
+            class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-accent/50 mix-blend-multiply"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10">
+        <h2 class="text-3xl font-bold mb-4 text-white">{title}</h2>
+        <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">{text}</p>
+
+        <div
+            class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+        >
+            <a
+                href={href}
+                class="inline-flex items-center gap-2 px-8 py-4 bg-white text-accent font-bold rounded-lg hover:bg-gray-100 transition-colors"
+            >
+                <Icon name="mdi:email" class="w-5 h-5" />
+                {buttonText}
+            </a>
+            <span class="text-white/80 font-medium"
+                >or call Matt on <a
+                    href="tel:0413999951"
+                    class="text-white hover:underline">0413 999 951</a
+                ></span
+            >
+        </div>
+    </div>
+</div>

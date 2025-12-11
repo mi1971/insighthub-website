@@ -37,6 +37,7 @@ const { title, description = "Premium Service Provider" } = Astro.props;
             property="og:image"
             content={new URL("/social-image.png", Astro.site)}
         />
+        <link rel="preconnect" href="https://images.unsplash.com" />
     </head>
     <body
         class="bg-white text-gray-900 antialiased selection:bg-black selection:text-white"

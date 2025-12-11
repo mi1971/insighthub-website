@@ -12,7 +12,7 @@ let posts = [];
 let error = null;
 
 try {
-    const fileList = await getFile("src/content/blog");
+    const fileList = await getFile("service-provider-website/src/content/blog");
     if (Array.isArray(fileList)) {
         posts = fileList.filter(
             (f: any) => f.name.endsWith(".md") || f.name.endsWith(".mdx"),
@@ -25,13 +25,13 @@ try {
 ---
 
 <BaseLayout title="Admin Dashboard">
-    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto pt-32 pb-6 sm:px-6 lg:px-8">
         <div class="px-4 py-6 sm:px-0">
             <div class="flex justify-between items-center mb-6">
                 <h1 class="text-3xl font-bold text-gray-900">Blog Posts</h1>
                 <a
                     href="/admin/edit/new"
-                    class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded"
+                    class="bg-[#6B4E3D] hover:opacity-90 text-white font-bold py-2 px-4 rounded"
                 >
                     Create New Post
                 </a>
@@ -60,7 +60,7 @@ try {
                                 >
                                     <div class="px-4 py-4 sm:px-6">
                                         <div class="flex items-center justify-between">
-                                            <p class="text-sm font-medium text-indigo-600 truncate">
+                                            <p class="text-sm font-medium text-[--color-accent] truncate">
                                                 {post.name}
                                             </p>
                                             <div class="ml-2 flex-shrink-0 flex">

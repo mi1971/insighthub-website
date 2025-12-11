@@ -1,7 +1,7 @@
 ---
-import BaseLayout from './BaseLayout.astro';
-import ParallaxSection from '../components/ParallaxSection.astro';
-import { Icon } from 'astro-icon/components';
+import BaseLayout from "./BaseLayout.astro";
+import ParallaxSection from "../components/ParallaxSection.astro";
+import { Icon } from "astro-icon/components";
 
 interface Props {
     title: string;
@@ -12,51 +12,86 @@ interface Props {
     overlayClass?: string;
 }
 
-const { title, subtitle, heroImage, features, imagePosition = "object-center", overlayClass = "bg-accent/40 mix-blend-multiply" } = Astro.props;
+const {
+    title,
+    subtitle,
+    heroImage,
+    features,
+    imagePosition = "object-center",
+    overlayClass = "bg-accent/40 mix-blend-multiply",
+} = Astro.props;
 ---
 
 <BaseLayout title={`${title} | Antigravity Services`} description={subtitle}>
     <!-- Service Hero -->
-    <div class="relative h-[60vh] flex items-center justify-center bg-primary text-main overflow-hidden">
+    <div
+        class="relative h-[60vh] flex items-center justify-center bg-primary text-main overflow-hidden"
+    >
         <div class="absolute inset-0 z-0">
-             <img 
-                src={heroImage} 
-                alt={title} 
+            <img
+                src={heroImage}
+                alt={title}
                 class={`w-full h-full object-cover ${imagePosition}`}
             />
             <div class={`absolute inset-0 ${overlayClass}`}></div>
         </div>
         <div class="relative z-10 container mx-auto px-4 md:px-12 text-center">
-            <h1 class="text-5xl md:text-7xl font-bold tracking-tighter mb-4">{title}</h1>
-            <p class="text-xl md:text-2xl text-surface max-w-2xl mx-auto">{subtitle}</p>
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tighter mb-4">
+                {title}
+            </h1>
+            <p class="text-xl md:text-2xl text-surface max-w-2xl mx-auto">
+                {subtitle}
+            </p>
         </div>
     </div>
 
     <!-- Main Content -->
     <section class="py-20 md:py-32 bg-main">
-        <div class="container mx-auto px-4 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div
+            class="container mx-auto px-4 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12"
+        >
             <div class="lg:col-span-8">
                 <h2 class="text-3xl font-bold mb-8 text-primary">Overview</h2>
-                <div class="prose prose-lg prose-neutral max-w-none text-primary">
+                <div
+                    class="prose prose-lg prose-neutral max-w-none text-primary"
+                >
                     <slot />
                 </div>
             </div>
             <div class="lg:col-span-4">
-                <div class="bg-surface p-8 rounded-none border border-subtle/20 sticky top-32">
-                    <h3 class="text-xl font-bold mb-6 uppercase tracking-widest text-primary">Key Features</h3>
+                <div
+                    class="bg-surface p-8 rounded-none border border-subtle/20 sticky top-32"
+                >
+                    <h3
+                        class="text-xl font-bold mb-6 uppercase tracking-widest text-primary"
+                    >
+                        Key Features
+                    </h3>
                     <ul class="space-y-4">
-                        {features.map(feature => (
-                            <li class="flex items-start gap-3">
-                                <Icon name="mdi:check-circle-outline" class="w-6 h-6 text-accent flex-shrink-0 mt-0.5" />
-                                <span class="text-primary">{feature}</span>
-                            </li>
-                        ))}
+                        {
+                            features.map((feature) => (
+                                <li class="flex items-start gap-3">
+                                    <Icon
+                                        name="mdi:check-circle-outline"
+                                        class="w-6 h-6 text-accent flex-shrink-0 mt-0.5"
+                                    />
+                                    <span class="text-primary">{feature}</span>
+                                </li>
+                            ))
+                        }
                     </ul>
-                    
+
                     <div class="mt-10 pt-10 border-t border-subtle/20">
-                        <h4 class="font-bold mb-2 text-primary">Need this service?</h4>
-                        <p class="text-sm text-subtle mb-6">Contact our team to get a custom quote.</p>
-                        <a href="/contact" class="block w-full py-4 bg-primary text-main text-center font-bold uppercase tracking-widest hover:bg-accent transition-colors">
+                        <h4 class="font-bold mb-2 text-primary">
+                            Need this service?
+                        </h4>
+                        <p class="text-sm text-subtle mb-6">
+                            Contact our team to get a custom quote.
+                        </p>
+                        <a
+                            href="/contact"
+                            class="block w-full py-4 bg-primary text-main text-center font-bold uppercase tracking-widest hover:bg-accent transition-colors"
+                        >
                             Get Quote
                         </a>
                     </div>
@@ -66,13 +101,15 @@ const { title, subtitle, heroImage, features, imagePosition = "object-center", o
     </section>
 
     <!-- Bottom CTA / Related - Placeholder -->
-    <ParallaxSection 
-        image="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=2000" 
+    <ParallaxSection
+        image="/footer-bg.jpg"
         height="h-[40vh]"
-        overlayClass="bg-accent/60"
+        overlayClass="bg-accent/50 mix-blend-multiply"
     >
         <div class="absolute inset-0 flex items-center justify-center">
-            <h2 class="text-4xl font-bold text-white">Streamline your business today.</h2>
+            <h2 class="text-4xl font-bold text-white">
+                Streamline your business today.
+            </h2>
         </div>
     </ParallaxSection>
 </BaseLayout>

@@ -20,7 +20,7 @@ export const POST: APIRoute = async ({ request, cookies }) => {
 
         // Construct file content
         const fileContent = matter.stringify(content, frontmatter);
-        const path = `src/content/blog/${filename}`;
+        const path = `service-provider-website/src/content/blog/${filename}`;
         const message = `Update ${filename}`;
 
         const result = await saveFile(path, fileContent, message, sha);

@@ -1,7 +1,8 @@
 ---
 export const prerender = true;
-import ServiceLayout from '../../layouts/ServiceLayout.astro';
-import { Icon } from 'astro-icon/components';
+import ServiceLayout from "../../layouts/ServiceLayout.astro";
+import { Icon } from "astro-icon/components";
+import ServiceCTA from "../../components/ServiceCTA.astro";
 ---
 
 <ServiceLayout
@@ -13,54 +14,102 @@ import { Icon } from 'astro-icon/components';
         "AI Checks Documents",
         "Request in 60 Seconds",
         "Files Named and Organised",
-        "Instant Notifications"
+        "Instant Notifications",
     ]}
 >
     <!-- Why Brokers Love FileCheck -->
     <section class="mb-20 fade-up">
-        <h2 class="text-3xl font-bold mb-6 text-primary">Why Brokers Love FileCheck</h2>
+        <h2 class="text-3xl font-bold mb-6 text-primary">
+            Why Brokers Love FileCheck
+        </h2>
         <div class="prose prose-lg text-gray-600 max-w-none">
             <p class="mb-4">
-                As brokers, we all know the pain of waiting on clients to send documents, finding out a document has expired right before submission, or getting scans so blurry they can’t be used.
+                As brokers, we all know the pain of waiting on clients to send
+                documents, finding out a document has expired right before
+                submission, or getting scans so blurry they can’t be used.
             </p>
-            <p class="font-bold text-accent mb-4">It’s time for that to change.</p>
+            <p class="font-bold text-accent mb-4">
+                It’s time for that to change.
+            </p>
             <p>
-                FileCheck takes the hassle out of document collection so you can spend more time helping your clients and growing your business, not stuck in admin.
+                FileCheck takes the hassle out of document collection so you can
+                spend more time helping your clients and growing your business,
+                not stuck in admin.
             </p>
         </div>
     </section>
 
     <!-- What FileCheck Can Do for You -->
     <section class="mb-20">
-        <h2 class="text-3xl font-bold mb-10 text-primary fade-up">What FileCheck Can Do for You</h2>
+        <h2 class="text-3xl font-bold mb-10 text-primary fade-up">
+            What FileCheck Can Do for You
+        </h2>
         <div class="grid md:grid-cols-2 gap-10 stagger-parent">
             <div class="bg-main p-8 rounded-xl stagger-child">
-                <Icon name="mdi:cloud-upload" class="w-10 h-10 text-accent mb-4" />
-                <h3 class="text-xl font-bold mb-3">Clients Upload Their Documents Easily</h3>
-                <p class="text-gray-600">No more back-and-forth emails. Clients can securely upload from their phone or computer in minutes.</p>
+                <Icon
+                    name="mdi:cloud-upload"
+                    class="w-10 h-10 text-accent mb-4"
+                />
+                <h3 class="text-xl font-bold mb-3">
+                    Clients Upload Their Documents Easily
+                </h3>
+                <p class="text-gray-600">
+                    No more back-and-forth emails. Clients can securely upload
+                    from their phone or computer in minutes.
+                </p>
             </div>
             <div class="bg-main p-8 rounded-xl stagger-child">
                 <Icon name="mdi:robot" class="w-10 h-10 text-accent mb-4" />
-                <h3 class="text-xl font-bold mb-3">AI Checks Documents for You</h3>
-                <p class="text-gray-600">FileCheck automatically checks if an ID has expired, if a scan is too blurry, or if a page is missing.</p>
+                <h3 class="text-xl font-bold mb-3">
+                    AI Checks Documents for You
+                </h3>
+                <p class="text-gray-600">
+                    FileCheck automatically checks if an ID has expired, if a
+                    scan is too blurry, or if a page is missing.
+                </p>
             </div>
             <div class="bg-main p-8 rounded-xl stagger-child">
-                <Icon name="mdi:timer-outline" class="w-10 h-10 text-accent mb-4" />
-                <h3 class="text-xl font-bold mb-3">Request Documents in 60 Seconds</h3>
-                <p class="text-gray-600">Send a secure document request link in under a minute.</p>
+                <Icon
+                    name="mdi:timer-outline"
+                    class="w-10 h-10 text-accent mb-4"
+                />
+                <h3 class="text-xl font-bold mb-3">
+                    Request Documents in 60 Seconds
+                </h3>
+                <p class="text-gray-600">
+                    Send a secure document request link in under a minute.
+                </p>
             </div>
             <div class="bg-main p-8 rounded-xl stagger-child">
-                <Icon name="mdi:folder-outline" class="w-10 h-10 text-accent mb-4" />
-                <h3 class="text-xl font-bold mb-3">Files Named and Organised</h3>
-                <p class="text-gray-600">No more digging through messy email attachments. Files are named and filed, ready for your CRM or aggregator software.</p>
+                <Icon
+                    name="mdi:folder-outline"
+                    class="w-10 h-10 text-accent mb-4"
+                />
+                <h3 class="text-xl font-bold mb-3">
+                    Files Named and Organised
+                </h3>
+                <p class="text-gray-600">
+                    No more digging through messy email attachments. Files are
+                    named and filed, ready for your CRM or aggregator software.
+                </p>
             </div>
         </div>
-        <div class="mt-10 bg-accent/10 p-8 rounded-xl border border-accent/20 fade-up">
+        <div
+            class="mt-10 bg-accent/10 p-8 rounded-xl border border-accent/20 fade-up"
+        >
             <div class="flex items-start gap-4">
-                <Icon name="mdi:bell-ring-outline" class="w-8 h-8 text-accent shrink-0 mt-1" />
+                <Icon
+                    name="mdi:bell-ring-outline"
+                    class="w-8 h-8 text-accent shrink-0 mt-1"
+                />
                 <div>
-                    <h3 class="text-xl font-bold mb-2">Instant Notifications</h3>
-                    <p class="text-gray-600">Know straight away if a file isn’t clear or needs replacing, so you can avoid last-minute surprises.</p>
+                    <h3 class="text-xl font-bold mb-2">
+                        Instant Notifications
+                    </h3>
+                    <p class="text-gray-600">
+                        Know straight away if a file isn’t clear or needs
+                        replacing, so you can avoid last-minute surprises.
+                    </p>
                 </div>
             </div>
         </div>
@@ -68,27 +117,49 @@ import { Icon } from 'astro-icon/components';
 
     <!-- How It Works -->
     <section class="mb-20">
-        <h2 class="text-3xl font-bold mb-10 text-primary text-center fade-up">How It Works</h2>
+        <h2 class="text-3xl font-bold mb-10 text-primary text-center fade-up">
+            How It Works
+        </h2>
         <div class="grid md:grid-cols-4 gap-8 stagger-parent">
             <div class="text-center stagger-child">
-                <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">1</div>
+                <div
+                    class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6"
+                >
+                    1
+                </div>
                 <h4 class="font-bold mb-2">Send a Request</h4>
                 <p class="text-sm text-gray-600">Takes less than a minute.</p>
             </div>
             <div class="text-center stagger-child">
-                <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">2</div>
+                <div
+                    class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6"
+                >
+                    2
+                </div>
                 <h4 class="font-bold mb-2">Clients Upload Securely</h4>
                 <p class="text-sm text-gray-600">No app downloads, no fuss.</p>
             </div>
-             <div class="text-center">
-                <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">3</div>
+            <div class="text-center">
+                <div
+                    class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6"
+                >
+                    3
+                </div>
                 <h4 class="font-bold mb-2">FileCheck Does the Work</h4>
-                <p class="text-sm text-gray-600">Checks, names, and files everything for you.</p>
+                <p class="text-sm text-gray-600">
+                    Checks, names, and files everything for you.
+                </p>
             </div>
-             <div class="text-center">
-                <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">4</div>
+            <div class="text-center">
+                <div
+                    class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6"
+                >
+                    4
+                </div>
                 <h4 class="font-bold mb-2">You’re Ready to Go</h4>
-                <p class="text-sm text-gray-600">Files are clean, checked, and waiting in your system.</p>
+                <p class="text-sm text-gray-600">
+                    Files are clean, checked, and waiting in your system.
+                </p>
             </div>
         </div>
     </section>
@@ -97,32 +168,46 @@ import { Icon } from 'astro-icon/components';
     <section class="mb-20">
         <h2 class="text-3xl font-bold mb-10 text-primary fade-up">FAQs</h2>
         <div class="space-y-6 max-w-3xl mx-auto stagger-parent">
-             <div class="border-b border-subtle/20 pb-6 stagger-child">
-                <h4 class="font-bold text-lg mb-2">Is FileCheck easy for clients to use?</h4>
-                <p class="text-gray-600">Yes. Clients get a simple, secure link they can open on their phone or computer to upload documents in a few taps.</p>
+            <div class="border-b border-subtle/20 pb-6 stagger-child">
+                <h4 class="font-bold text-lg mb-2">
+                    Is FileCheck easy for clients to use?
+                </h4>
+                <p class="text-gray-600">
+                    Yes. Clients get a simple, secure link they can open on
+                    their phone or computer to upload documents in a few taps.
+                </p>
             </div>
             <div class="border-b border-subtle/20 pb-6 stagger-child">
                 <h4 class="font-bold text-lg mb-2">Is FileCheck secure?</h4>
-                <p class="text-gray-600">Absolutely. FileCheck uses secure, encrypted upload links to protect your clients’ sensitive information.</p>
+                <p class="text-gray-600">
+                    Absolutely. FileCheck uses secure, encrypted upload links to
+                    protect your clients’ sensitive information.
+                </p>
             </div>
-             <div class="border-b border-subtle/20 pb-6">
-                <h4 class="font-bold text-lg mb-2">Do I need to install software?</h4>
-                <p class="text-gray-600">No, FileCheck is cloud-based, so you can use it from anywhere.</p>
+            <div class="border-b border-subtle/20 pb-6">
+                <h4 class="font-bold text-lg mb-2">
+                    Do I need to install software?
+                </h4>
+                <p class="text-gray-600">
+                    No, FileCheck is cloud-based, so you can use it from
+                    anywhere.
+                </p>
             </div>
-             <div class="border-b border-subtle/20 pb-6">
+            <div class="border-b border-subtle/20 pb-6">
                 <h4 class="font-bold text-lg mb-2">Is there a contract?</h4>
-                <p class="text-gray-600">No, you can cancel anytime. We’re here to make your life easier, not lock you in.</p>
+                <p class="text-gray-600">
+                    No, you can cancel anytime. We’re here to make your life
+                    easier, not lock you in.
+                </p>
             </div>
         </div>
     </section>
 
     <!-- CTA -->
-    <div class="bg-primary/5 rounded-2xl p-12 text-center fade-up">
-        <h2 class="text-3xl font-bold mb-4">Ready to Make Document Collection Easy?</h2>
-        <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">We built FileCheck so brokers like you can get your time back and focus on what you do best.</p>
-        <a href="https://register.flowjo.com.au" class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-all duration-200 bg-accent hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent uppercase tracking-widest no-underline">
-            Sign Up Now
-        </a>
-    </div>
-
+    <ServiceCTA
+        title="Ready to Make Document Collection Easy?"
+        text="We built FileCheck so brokers like you can get your time back and focus on what you do best."
+        href="https://register.flowjo.com.au"
+        buttonText="Sign Up Now"
+    />
 </ServiceLayout>

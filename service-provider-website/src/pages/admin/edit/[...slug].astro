@@ -27,7 +27,7 @@ let filePath = "";
 
 if (!isNew && slug) {
     try {
-        filePath = `src/content/blog/${slug}`;
+        filePath = `service-provider-website/src/content/blog/${slug}`;
         const file = await getFile(filePath);
         if (file && file.content) {
             sha = file.sha;
@@ -50,12 +50,12 @@ if (!isNew && slug) {
 ---
 
 <BaseLayout title={isNew ? "New Post" : "Edit Post"}>
-    <div class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto pt-32 pb-12 px-4 sm:px-6 lg:px-8">
         <div class="mb-8 flex justify-between items-center">
             <h1 class="text-3xl font-bold text-gray-900">
                 {isNew ? "Create New Post" : `Editing: ${slug}`}
             </h1>
-            <a href="/admin" class="text-indigo-600 hover:text-indigo-900"
+            <a href="/admin" class="text-[#6B4E3D] hover:opacity-80"
                 >Back to Dashboard</a
             >
         </div>
@@ -81,7 +81,7 @@ if (!isNew && slug) {
                         id="title"
                         value={post.title}
                         required
-                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[#6B4E3D] focus:border-[#6B4E3D] sm:text-sm"
                     />
                 </div>
 
@@ -95,7 +95,7 @@ if (!isNew && slug) {
                         name="description"
                         id="description"
                         rows="3"
-                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[#6B4E3D] focus:border-[#6B4E3D] sm:text-sm"
                         >{post.description}</textarea
                     >
                 </div>
@@ -112,7 +112,7 @@ if (!isNew && slug) {
                             name="pubDate"
                             id="pubDate"
                             value={post.pubDate}
-                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[#6B4E3D] focus:border-[#6B4E3D] sm:text-sm"
                         />
                     </div>
 
@@ -127,7 +127,7 @@ if (!isNew && slug) {
                             name="author"
                             id="author"
                             value={post.author}
-                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[#6B4E3D] focus:border-[#6B4E3D] sm:text-sm"
                         />
                     </div>
                 </div>
@@ -143,7 +143,7 @@ if (!isNew && slug) {
                         name="heroImage"
                         id="heroImage"
                         value={post.heroImage}
-                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[#6B4E3D] focus:border-[#6B4E3D] sm:text-sm"
                     />
                 </div>
 
@@ -157,7 +157,7 @@ if (!isNew && slug) {
                         name="content"
                         id="content"
                         rows="20"
-                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm font-mono"
+                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[#6B4E3D] focus:border-[#6B4E3D] sm:text-sm font-mono"
                         >{post.content}</textarea
                     >
                     <p class="mt-2 text-sm text-gray-500">
@@ -170,7 +170,7 @@ if (!isNew && slug) {
                 <button
                     type="submit"
                     id="save-btn"
-                    class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-[#6B4E3D] hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#6B4E3D]"
                 >
                     Save Post
                 </button>

@@ -1,13 +1,15 @@
 ---
 export const prerender = true;
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { Icon } from 'astro-icon/components';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <BaseLayout title="Contact Us | Antigravity">
     <div class="pt-32 pb-20 px-4 md:px-12 bg-primary text-main">
         <div class="container mx-auto text-center">
-            <h1 class="text-6xl md:text-8xl font-bold tracking-tighter mb-8">Get in Touch</h1>
+            <h1 class="text-6xl md:text-8xl font-bold tracking-tighter mb-8">
+                Get in Touch
+            </h1>
             <p class="text-xl md:text-2xl text-subtle max-w-2xl mx-auto">
                 Ready to start your next project? We'd love to hear from you.
             </p>
@@ -15,43 +17,69 @@ import { Icon } from 'astro-icon/components';
     </div>
 
     <section class="py-20 md:py-32 bg-main">
-        <div class="container mx-auto px-4 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-20">
+        <div
+            class="container mx-auto px-4 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-20"
+        >
             <div>
-                <h2 class="text-3xl font-bold mb-8 text-primary">Contact Information</h2>
+                <h2 class="text-3xl font-bold mb-8 text-primary">
+                    Contact Information
+                </h2>
                 <div class="space-y-8">
-                     <div class="flex items-start gap-6">
+                    <div class="flex items-start gap-6">
                         <div class="p-4 bg-surface rounded-full">
-                            <Icon name="mdi:account-outline" class="w-6 h-6 text-primary" />
+                            <Icon
+                                name="mdi:account-outline"
+                                class="w-6 h-6 text-primary"
+                            />
                         </div>
                         <div>
-                            <h3 class="font-bold text-lg mb-1 text-primary">Contact Person</h3>
+                            <h3 class="font-bold text-lg mb-1 text-primary">
+                                Contact Person
+                            </h3>
                             <p class="text-subtle">Matt Ireland</p>
                         </div>
                     </div>
-                     <div class="flex items-start gap-6">
+                    <div class="flex items-start gap-6">
                         <div class="p-4 bg-surface rounded-full">
-                            <Icon name="mdi:map-marker-outline" class="w-6 h-6 text-primary" />
+                            <Icon
+                                name="mdi:map-marker-outline"
+                                class="w-6 h-6 text-primary"
+                            />
                         </div>
                         <div>
-                            <h3 class="font-bold text-lg mb-1 text-primary">Location</h3>
-                            <p class="text-subtle">Sunshine Coast, QLD, Australia</p>
+                            <h3 class="font-bold text-lg mb-1 text-primary">
+                                Location
+                            </h3>
+                            <p class="text-subtle">
+                                Sunshine Coast, QLD, Australia
+                            </p>
                         </div>
                     </div>
-                     <div class="flex items-start gap-6">
+                    <div class="flex items-start gap-6">
                         <div class="p-4 bg-surface rounded-full">
-                            <Icon name="mdi:email-outline" class="w-6 h-6 text-primary" />
+                            <Icon
+                                name="mdi:email-outline"
+                                class="w-6 h-6 text-primary"
+                            />
                         </div>
                         <div>
-                            <h3 class="font-bold text-lg mb-1 text-primary">Email</h3>
+                            <h3 class="font-bold text-lg mb-1 text-primary">
+                                Email
+                            </h3>
                             <p class="text-subtle">matt@insighthub.au</p>
                         </div>
                     </div>
-                     <div class="flex items-start gap-6">
+                    <div class="flex items-start gap-6">
                         <div class="p-4 bg-surface rounded-full">
-                            <Icon name="mdi:phone-outline" class="w-6 h-6 text-primary" />
+                            <Icon
+                                name="mdi:phone-outline"
+                                class="w-6 h-6 text-primary"
+                            />
                         </div>
                         <div>
-                            <h3 class="font-bold text-lg mb-1 text-primary">Phone</h3>
+                            <h3 class="font-bold text-lg mb-1 text-primary">
+                                Phone
+                            </h3>
                             <p class="text-subtle">0413 999 951</p>
                         </div>
                     </div>
@@ -62,20 +90,55 @@ import { Icon } from 'astro-icon/components';
                 <form class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label for="name" class="block text-sm font-bold uppercase tracking-widest mb-2 text-primary">Name</label>
-                            <input type="text" id="name" name="name" class="w-full p-4 bg-surface border border-subtle/20 focus:border-primary focus:outline-none transition-colors text-primary" placeholder="John Doe" required />
+                            <label
+                                for="name"
+                                class="block text-sm font-bold uppercase tracking-widest mb-2 text-primary"
+                                >Name</label
+                            >
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                class="w-full p-4 bg-surface border border-subtle/20 focus:border-primary focus:outline-none transition-colors text-primary"
+                                placeholder="John Smith"
+                                required
+                            />
                         </div>
                         <div>
-                            <label for="email" class="block text-sm font-bold uppercase tracking-widest mb-2 text-primary">Email</label>
-                            <input type="email" id="email" name="email" class="w-full p-4 bg-surface border border-subtle/20 focus:border-primary focus:outline-none transition-colors text-primary" placeholder="john@example.com" required />
+                            <label
+                                for="email"
+                                class="block text-sm font-bold uppercase tracking-widest mb-2 text-primary"
+                                >Email</label
+                            >
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                class="w-full p-4 bg-surface border border-subtle/20 focus:border-primary focus:outline-none transition-colors text-primary"
+                                placeholder="john@example.com"
+                                required
+                            />
                         </div>
                     </div>
                     <div>
-                        <label for="message" class="block text-sm font-bold uppercase tracking-widest mb-2 text-primary">Message</label>
-                        <textarea id="message" name="message" rows="6" class="w-full p-4 bg-surface border border-subtle/20 focus:border-primary focus:outline-none transition-colors text-primary" placeholder="Tell us about your project..." required></textarea>
+                        <label
+                            for="message"
+                            class="block text-sm font-bold uppercase tracking-widest mb-2 text-primary"
+                            >Message</label
+                        >
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="6"
+                            class="w-full p-4 bg-surface border border-subtle/20 focus:border-primary focus:outline-none transition-colors text-primary"
+                            placeholder="Tell us about your project..."
+                            required></textarea>
                     </div>
                     <div id="form-status" class="hidden p-4 rounded-lg"></div>
-                    <button type="submit" class="px-10 py-5 bg-primary text-main font-bold uppercase tracking-widest hover:bg-accent transition-colors w-full md:w-auto">
+                    <button
+                        type="submit"
+                        class="px-10 py-5 bg-primary text-main font-bold uppercase tracking-widest hover:bg-accent transition-colors w-full md:w-auto"
+                    >
                         Send Message
                     </button>
                 </form>
@@ -85,33 +148,39 @@ import { Icon } from 'astro-icon/components';
 </BaseLayout>
 
 <script>
-    const form = document.querySelector('form');
-    const statusDiv = document.getElementById('form-status');
+    const form = document.querySelector("form");
+    const statusDiv = document.getElementById("form-status");
 
-    form?.addEventListener('submit', async (e) => {
+    form?.addEventListener("submit", async (e) => {
         e.preventDefault();
         const formData = {
-            name: (document.getElementById('name') as HTMLInputElement).value,
-            email: (document.getElementById('email') as HTMLInputElement).value,
-            message: (document.getElementById('message') as HTMLTextAreaElement).value,
+            name: (document.getElementById("name") as HTMLInputElement).value,
+            email: (document.getElementById("email") as HTMLInputElement).value,
+            message: (document.getElementById("message") as HTMLTextAreaElement)
+                .value,
         };
 
-        const button = form.querySelector('button');
+        const button = form.querySelector("button");
         const originalText = button!.innerText;
-        button!.innerText = 'Sending...';
+        button!.innerText = "Sending...";
         button!.disabled = true;
-        
+
         // Hide previous status
         if (statusDiv) {
-            statusDiv.classList.add('hidden');
-            statusDiv.classList.remove('bg-green-100', 'text-green-800', 'bg-red-100', 'text-red-800');
+            statusDiv.classList.add("hidden");
+            statusDiv.classList.remove(
+                "bg-green-100",
+                "text-green-800",
+                "bg-red-100",
+                "text-red-800",
+            );
         }
 
         try {
-            const response = await fetch('/api/send-email', {
-                method: 'POST',
+            const response = await fetch("/api/send-email", {
+                method: "POST",
                 headers: {
-                    'Content-Type': 'application/json',
+                    "Content-Type": "application/json",
                 },
                 body: JSON.stringify(formData),
             });
@@ -119,22 +188,24 @@ import { Icon } from 'astro-icon/components';
             const result = await response.json();
 
             if (statusDiv) {
-                statusDiv.classList.remove('hidden');
+                statusDiv.classList.remove("hidden");
                 if (response.ok) {
-                    statusDiv.classList.add('bg-green-100', 'text-green-800');
-                    statusDiv.innerText = 'Message sent successfully! We will get back to you soon.';
+                    statusDiv.classList.add("bg-green-100", "text-green-800");
+                    statusDiv.innerText =
+                        "Message sent successfully! We will get back to you soon.";
                     form.reset();
                 } else {
-                    statusDiv.classList.add('bg-red-100', 'text-red-800');
+                    statusDiv.classList.add("bg-red-100", "text-red-800");
                     statusDiv.innerText = `Error: ${result.message}`;
                 }
             }
         } catch (error) {
-            console.error('Error submitting form:', error);
+            console.error("Error submitting form:", error);
             if (statusDiv) {
-                statusDiv.classList.remove('hidden');
-                statusDiv.classList.add('bg-red-100', 'text-red-800');
-                statusDiv.innerText = 'An unexpected error occurred. Please try again later.';
+                statusDiv.classList.remove("hidden");
+                statusDiv.classList.add("bg-red-100", "text-red-800");
+                statusDiv.innerText =
+                    "An unexpected error occurred. Please try again later.";
             }
         } finally {
             button!.innerText = originalText;

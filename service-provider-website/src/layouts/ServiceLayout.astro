@@ -7,6 +7,7 @@ interface Props {
     title: string;
     subtitle: string;
     heroImage: string;
+    logoImage?: string;
     features: string[];
     imagePosition?: string;
     overlayClass?: string;
@@ -16,6 +17,7 @@ const {
     title,
     subtitle,
     heroImage,
+    logoImage,
     features,
     imagePosition = "object-center",
     overlayClass = "bg-accent/40 mix-blend-multiply",

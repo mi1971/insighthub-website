@@ -1,12 +1,13 @@
 ---
 export const prerender = true;
-import ServiceLayout from '../../layouts/ServiceLayout.astro';
-import { Icon } from 'astro-icon/components';
+import ServiceLayout from "../../layouts/ServiceLayout.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <ServiceLayout
     title="Work With Linda"
     subtitle="Business Strategy & Performance Consultant | Fractional Transformation Lead"
+    logoImage="/images/logo-work-with-linda-brown.png"
     heroImage="/images/linda-banner-alt.png"
     imagePosition="object-[50%_25%]"
     features={[
@@ -14,24 +15,43 @@ import { Icon } from 'astro-icon/components';
         "Strategy, Systems & Structure",
         "Founder-Led Business Support",
         "Operational Clarity",
-        "Commercial Insight"
+        "Commercial Insight",
     ]}
 >
     <div class="max-w-4xl mx-auto">
         <p class="lead text-2xl text-primary font-medium mb-12">
-            I work with founder-led and franchisee businesses who are ready for their next chapter of either growth, stabilisation or scale but need sharper strategy, stronger systems, cleaner workflow and better performance to get there.
+            I work with founder-led and franchisee businesses who are ready for
+            their next chapter of either growth, stabilisation or scale but need
+            sharper strategy, stronger systems, cleaner workflow and better
+            performance to get there.
         </p>
 
         <!-- Section 1: Philosophy -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20 items-center">
             <div class="space-y-6 text-lg">
-                <p>My work sits in that rare space where my role is to help you with your own clarity and then execution, whether that is you, your team or me doing the execution.</p>
-                <p>My work is grounded, human and direct. I help founders breathe again, see clearly and make confident decisions.</p>
+                <p>
+                    My work sits in that rare space where my role is to help you
+                    with your own clarity and then execution, whether that is
+                    you, your team or me doing the execution.
+                </p>
+                <p>
+                    My work is grounded, human and direct. I help founders
+                    breathe again, see clearly and make confident decisions.
+                </p>
             </div>
-            <blockquote class="bg-surface p-8 rounded-xl border-l-4 border-accent shadow-sm">
-                <Icon name="mdi:format-quote-close" class="w-8 h-8 text-accent/50 mb-4" />
-                <p class="text-xl italic text-primary font-medium leading-relaxed">
-                    I help owners step out of the noise, see the whole board, decide what actually matters, so they can build a business that runs cleanly, profitably and sustainably.
+            <blockquote
+                class="bg-surface p-8 rounded-xl border-l-4 border-accent shadow-sm"
+            >
+                <Icon
+                    name="mdi:format-quote-close"
+                    class="w-8 h-8 text-accent/50 mb-4"
+                />
+                <p
+                    class="text-xl italic text-primary font-medium leading-relaxed"
+                >
+                    I help owners step out of the noise, see the whole board,
+                    decide what actually matters, so they can build a business
+                    that runs cleanly, profitably and sustainably.
                 </p>
             </blockquote>
         </div>
@@ -40,21 +60,47 @@ import { Icon } from 'astro-icon/components';
     <!-- Section 2: Experience -->
     <div class="bg-gray-50 -mx-4 md:-mx-12 px-4 md:px-12 py-16 mb-20">
         <div class="max-w-4xl mx-auto">
-            <h3 class="text-2xl font-bold mb-8 text-primary flex items-center gap-3">
-                 <Icon name="mdi:briefcase-outline" class="w-6 h-6 text-accent" />
-                 Experience & Track Record
+            <h3
+                class="text-2xl font-bold mb-8 text-primary flex items-center gap-3"
+            >
+                <Icon
+                    name="mdi:briefcase-outline"
+                    class="w-6 h-6 text-accent"
+                />
+                Experience & Track Record
             </h3>
             <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
-                <p>I’ve spent more than two decades working across finance, operations, people, culture, product-based businesses, licensing and franchise models, software, advisory and small business.</p>
-                <p>Earlier in my career, my husband and I built and sold several businesses, including one acquired by a publicly listed Australian company. That experience shaped the way I think about scale, value creation, commercial discipline and the true cost of growth.</p>
-                 <p>I’ve grown teams, built systems from scratch, supported exits, navigated restructures, mentored leaders, and guided owners through the messy middle stages where everything feels too fast, too heavy or too uncertain.</p>
+                <p>
+                    I’ve spent more than two decades working across finance,
+                    operations, people, culture, product-based businesses,
+                    licensing and franchise models, software, advisory and small
+                    business.
+                </p>
+                <p>
+                    Earlier in my career, my husband and I built and sold
+                    several businesses, including one acquired by a publicly
+                    listed Australian company. That experience shaped the way I
+                    think about scale, value creation, commercial discipline and
+                    the true cost of growth.
+                </p>
+                <p>
+                    I’ve grown teams, built systems from scratch, supported
+                    exits, navigated restructures, mentored leaders, and guided
+                    owners through the messy middle stages where everything
+                    feels too fast, too heavy or too uncertain.
+                </p>
             </div>
-            
-            <div class="mt-10 p-6 bg-white rounded-lg border border-subtle/20 shadow-sm flex gap-4">
-                 <div class="w-1 bg-accent shrink-0"></div>
-                 <p class="italic text-primary font-medium text-lg">
-                    "Small businesses value the speed and pragmatism. Medium-sized businesses value the commercial insight. Everyone values having someone in their corner who can carry weight without needing a full-time seat at the table."
-                 </p>
+
+            <div
+                class="mt-10 p-6 bg-white rounded-lg border border-subtle/20 shadow-sm flex gap-4"
+            >
+                <div class="w-1 bg-accent shrink-0"></div>
+                <p class="italic text-primary font-medium text-lg">
+                    "Small businesses value the speed and pragmatism.
+                    Medium-sized businesses value the commercial insight.
+                    Everyone values having someone in their corner who can carry
+                    weight without needing a full-time seat at the table."
+                </p>
             </div>
         </div>
     </div>
@@ -62,45 +108,73 @@ import { Icon } from 'astro-icon/components';
     <div class="max-w-4xl mx-auto">
         <!-- Section 3: Fractional Role -->
         <div class="mb-20">
-              <h3 class="text-2xl font-bold mb-6 text-primary">The Fractional Transformation Lead</h3>
-              <div class="text-lg leading-relaxed text-gray-700 bg-surface/30 p-8 rounded-xl border border-subtle/10">
-                  <p class="mb-6">
-                    As a Fractional Transformation Lead, I can step in part-time to reshape how a business performs across strategy, systems, structure, people, capacity and delivery.
-                  </p>
-                  <p class="mb-6">
+            <h3 class="text-2xl font-bold mb-6 text-primary">
+                The Fractional Transformation Lead
+            </h3>
+            <div
+                class="text-lg leading-relaxed text-gray-700 bg-surface/30 p-8 rounded-xl border border-subtle/10"
+            >
+                <p class="mb-6">
+                    As a Fractional Transformation Lead, I can step in part-time
+                    to reshape how a business performs across strategy, systems,
+                    structure, people, capacity and delivery.
+                </p>
+                <p class="mb-6">
                     "It’s the impact of a senior operator without the overhead."
-                  </p>
-                  <p>
-                    And the speed of a small-business mindset applied to organisations that want results sooner rather than later.
-                  </p>
-              </div>
+                </p>
+                <p>
+                    And the speed of a small-business mindset applied to
+                    organisations that want results sooner rather than later.
+                </p>
+            </div>
         </div>
 
         <!-- Section 4: BodFood Story -->
-        <div class="bg-primary text-white rounded-2xl p-8 md:p-12 relative overflow-hidden shadow-lg">
-             <div class="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-             <div class="relative z-10">
-                <h3 class="text-2xl font-bold mb-6 flex items-center gap-3 text-white">
+        <div
+            class="bg-primary text-white rounded-2xl p-8 md:p-12 relative overflow-hidden shadow-lg"
+        >
+            <div
+                class="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"
+            >
+            </div>
+            <div class="relative z-10">
+                <h3
+                    class="text-2xl font-bold mb-6 flex items-center gap-3 text-white"
+                >
                     <Icon name="mdi:leaf" class="w-6 h-6 text-white" />
                     The Founder Perspective
                 </h3>
                 <div class="space-y-6 text-white/90 text-lg leading-relaxed">
                     <p>
-                        Alongside my consulting work, I’m also the founder of BodFood, our clean, Australian-made haircare brand. Building BodFood keeps my strategic work deeply practical, everything I teach, I also apply.
+                        Alongside my consulting work, I’m also the founder of
+                        BodFood, our clean, Australian-made haircare brand.
+                        Building BodFood keeps my strategic work deeply
+                        practical, everything I teach, I also apply.
                     </p>
                     <p>
-                        Product development, cashflow, supply chain, team, customer experience, creative direction, marketing, wholesale.. It's all part of my lived experience and current life. And because BodFood is intentionally an independent Indie brand, I still handwrite every note that goes out with each order, whether it’s for a long-time online customer or a stockist on the other side of the country.
+                        Product development, cashflow, supply chain, team,
+                        customer experience, creative direction, marketing,
+                        wholesale.. It's all part of my lived experience and
+                        current life. And because BodFood is intentionally an
+                        independent Indie brand, I still handwrite every note
+                        that goes out with each order, whether it’s for a
+                        long-time online customer or a stockist on the other
+                        side of the country.
                     </p>
                     <p>
-                         It’s steady, deliberate work that reminds me every day that small touches still matter and that old school connection and intention have great impact and meaning.
+                        It’s steady, deliberate work that reminds me every day
+                        that small touches still matter and that old school
+                        connection and intention have great impact and meaning.
                     </p>
                 </div>
 
-                    <p>
-                        This dual life of strategist and creative maker gives me a cross-section of insight founders value. I understand the pressure, the pace, the decisions and the emotional load because I live them myself.
-                    </p>
-       
-             </div>
+                <p>
+                    This dual life of strategist and creative maker gives me a
+                    cross-section of insight founders value. I understand the
+                    pressure, the pace, the decisions and the emotional load
+                    because I live them myself.
+                </p>
+            </div>
         </div>
     </div>
 </ServiceLayout>

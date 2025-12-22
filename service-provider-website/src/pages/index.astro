@@ -1,66 +1,144 @@
 ---
 export const prerender = true;
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero from '../components/Hero.astro';
-import ServiceCard from '../components/ServiceCard.astro';
-import ParallaxSection from '../components/ParallaxSection.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import ParallaxSection from "../components/ParallaxSection.astro";
 
 const services = [
-    { title: "Flowjo", description: "Revolutionising workflow management with intuitive software.", icon: "mdi:water-outline", href: "/services/flowjo" },
-    { title: "Flowjo For Travel", description: "CRM made for Travel Agents.", icon: "mdi:airplane-takeoff", href: "/services/flowjo-for-travel" },
-    { title: "Insight Processing", description: "Australian based outsourcing and processing solutions for mortgage brokers.", icon: "mdi:chart-timeline-variant", href: "/services/insight-processing" },
-    { title: "Broker Growth Program", description: "Accelerating success for brokers with our tailored growth framework.", icon: "mdi:trending-up", href: "/services/broker-growth-program" },
-    { title: "Work With Linda", description: "Driving positive change through mindful business practices.", icon: "mdi:account-star-outline", href: "/services/work-with-linda" },
-    { title: "FileCheck", description: "Collect, check, and organise client documents without the endless follow-ups.", icon: "mdi:file-check-outline", href: "/services/filecheck" },
+    {
+        title: "Flowjo",
+        description:
+            "Revolutionising workflow management with intuitive software.",
+        icon: "mdi:water-outline",
+        image: "/images/logo-flowjo.png",
+        href: "/services/flowjo",
+        logoClass: "h-24",
+    },
+    {
+        title: "Insight Processing",
+        description:
+            "Australian based outsourcing and processing solutions for mortgage brokers.",
+        icon: "mdi:chart-timeline-variant",
+        image: "/images/logo-insight-processing.png",
+        href: "/services/insight-processing",
+        logoClass: "h-24",
+    },
+    {
+        title: "Broker Growth Program",
+        description:
+            "Accelerating success for brokers with our tailored growth framework.",
+        icon: "mdi:trending-up",
+        image: "/images/logo-bgf.png",
+        href: "/services/broker-growth-program",
+        logoClass: "h-24",
+    },
+    {
+        title: "Flowjo For Travel",
+        description: "CRM made for Travel Agents.",
+        icon: "mdi:airplane-takeoff",
+        image: "/images/logo-flowjo-travel.png",
+        href: "/services/flowjo-for-travel",
+        logoClass: "h-28",
+    },
+    {
+        title: "Work With Linda",
+        description:
+            "Driving positive change through mindful business practices.",
+        icon: "mdi:account-star-outline",
+        image: "/images/logo-work-with-linda.png",
+        href: "/services/work-with-linda",
+    },
+    {
+        title: "FileCheck",
+        description:
+            "Collect, check, and organise client documents without the endless follow-ups.",
+        icon: "mdi:file-check-outline",
+        image: "/images/logo-filecheck.png",
+        href: "/services/filecheck",
+    },
 ];
 ---
 
 <BaseLayout title="InsightHub | Innovating the Future of Business">
-	<Hero />
+    <Hero />
 
     <section class="py-20 md:py-32 bg-surface">
         <div class="container mx-auto px-4 md:px-12">
             <div class="mb-20 max-w-3xl fade-up">
-                <h2 class="text-sm font-bold uppercase tracking-widest text-accent mb-4">Welcome to InsightHub</h2>
-                <h3 class="text-4xl md:text-5xl font-bold tracking-tight text-primary">
-                    More than just a group <br/> of companies.
+                <h2
+                    class="text-sm font-bold uppercase tracking-widest text-accent mb-4"
+                >
+                    Welcome to InsightHub
+                </h2>
+                <h3
+                    class="text-4xl md:text-5xl font-bold tracking-tight text-primary"
+                >
+                    More than just a group <br /> of companies.
                 </h3>
                 <p class="mt-6 text-xl text-primary leading-relaxed">
-                    We’re a community dedicated to empowering businesses through cutting-edge solutions, professional growth, and creative insights. Whether you’re looking for backend support, advanced software, expert coaching, or strategic business initiatives, InsightHub is your partner in success.
+                    We’re a community dedicated to empowering businesses through
+                    cutting-edge solutions, professional growth, and creative
+                    insights. Whether you’re looking for backend support,
+                    advanced software, expert coaching, or strategic business
+                    initiatives, InsightHub is your partner in success.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-subtle/30 border border-subtle/30 stagger-parent">
-                {services.map(service => (
-                    <ServiceCard {...service} class="stagger-child" />
-                ))}
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-subtle/30 border border-subtle/30 stagger-parent"
+            >
+                {
+                    services.map((service) => (
+                        <ServiceCard {...service} class="stagger-child" />
+                    ))
+                }
             </div>
         </div>
     </section>
 
-    <ParallaxSection image="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=2000">
-        <div class="absolute inset-0 flex items-center justify-center text-center">
+    <ParallaxSection
+        image="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=2000"
+    >
+        <div
+            class="absolute inset-0 flex items-center justify-center text-center"
+        >
             <div class="max-w-4xl px-4">
-                <h2 class="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tighter">Innovate. Systemise. Grow.</h2>
+                <h2
+                    class="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tighter"
+                >
+                    Innovate. Systemise. Grow.
+                </h2>
                 <p class="text-xl text-white/90 max-w-2xl mx-auto">
-                    Our vision is to create a thriving ecosystem where businesses can access the tools, support, and knowledge they need to succeed.
+                    Our vision is to create a thriving ecosystem where
+                    businesses can access the tools, support, and knowledge they
+                    need to succeed.
                 </p>
             </div>
         </div>
     </ParallaxSection>
 
     <section class="py-20 md:py-32 bg-primary text-main">
-        <div class="container mx-auto px-4 md:px-12 flex flex-col md:flex-row items-center justify-between">
-             <div class="max-w-2xl mb-10 md:mb-0">
-                <h2 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight">Join the Community</h2>
-                <p class="text-subtle text-lg">Ready to take your business to the next level? Discover how we can help you innovate and grow.</p>
-             </div>
-             <div>
-                <a href="/contact" class="inline-block px-10 py-5 bg-accent text-white font-bold uppercase tracking-widest hover:bg-main hover:text-primary transition-all duration-300">
+        <div
+            class="container mx-auto px-4 md:px-12 flex flex-col md:flex-row items-center justify-between"
+        >
+            <div class="max-w-2xl mb-10 md:mb-0">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
+                    Join the Community
+                </h2>
+                <p class="text-subtle text-lg">
+                    Ready to take your business to the next level? Discover how
+                    we can help you innovate and grow.
+                </p>
+            </div>
+            <div>
+                <a
+                    href="/contact"
+                    class="inline-block px-10 py-5 bg-accent text-white font-bold uppercase tracking-widest hover:bg-main hover:text-primary transition-all duration-300"
+                >
                     Get in Touch
                 </a>
-             </div>
+            </div>
         </div>
     </section>
-
 </BaseLayout>

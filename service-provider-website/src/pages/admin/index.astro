@@ -1,6 +1,10 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { getFile } from "../../lib/github";
+import {
+    getFile,
+    type GitHubDirectoryItem,
+    type GitHubFile,
+} from "../../lib/github";
 
 export const prerender = false;
 
@@ -8,14 +12,14 @@ if (!Astro.cookies.has("auth_token")) {
     return Astro.redirect("/admin/login");
 }
 
-let posts = [];
+let posts: GitHubDirectoryItem[] = [];
 let error = null;
 
 try {
     const fileList = await getFile("service-provider-website/src/content/blog");
     if (Array.isArray(fileList)) {
-        posts = fileList.filter(
-            (f: any) => f.name.endsWith(".md") || f.name.endsWith(".mdx"),
+        posts = (fileList as GitHubDirectoryItem[]).filter(
+            (f) => f.name.endsWith(".md") || f.name.endsWith(".mdx"),
         );
     }
 } catch (e) {
@@ -52,7 +56,7 @@ try {
             <div class="bg-white shadow overflow-hidden sm:rounded-md">
                 <ul class="divide-y divide-gray-200">
                     {
-                        posts.map((post: any) => (
+                        posts.map((post) => (
                             <li>
                                 <a
                                     href={`/admin/edit/${post.name}`}

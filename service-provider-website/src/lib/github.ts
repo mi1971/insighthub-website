@@ -14,7 +14,22 @@ function getHeaders() {
     };
 }
 
-export async function getFile(path: string) {
+export interface GitHubFile {
+    sha: string;
+    content: string;
+    path: string;
+    name: string;
+    type: "file";
+}
+
+export interface GitHubDirectoryItem {
+    name: string;
+    path: string;
+    type: string;
+    sha: string;
+}
+
+export async function getFile(path: string): Promise<GitHubFile | GitHubDirectoryItem[] | null> {
     const owner = import.meta.env.GITHUB_OWNER;
     const repo = import.meta.env.GITHUB_REPO;
 

@@ -1,4 +1,9 @@
 @import "tailwindcss";
+/**
+ * Note: These directives are part of Tailwind CSS v4.
+ * If your IDE shows warnings for @theme or @plugin, it is likely running an older language server.
+ * These are valid in v4.
+ */
 @plugin "@tailwindcss/typography";
 
 @theme {

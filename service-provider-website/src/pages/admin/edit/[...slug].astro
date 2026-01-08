@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
-import { getFile } from "../../../lib/github";
+import { getFile, type GitHubFile } from "../../../lib/github";
 // @ts-ignore
 import matter from "gray-matter";
 
@@ -29,7 +29,7 @@ if (!isNew && slug) {
     try {
         filePath = `service-provider-website/src/content/blog/${slug}`;
         const file = await getFile(filePath);
-        if (file && file.content) {
+        if (file && !Array.isArray(file) && "content" in file) {
             sha = file.sha;
             const parsed = matter(file.content);
             post = {
@@ -179,28 +179,42 @@ if (!isNew && slug) {
     </div>
 
     <script>
-        document
-            .getElementById("editor-form")
-            .addEventListener("submit", async (e) => {
+        const form = document.getElementById("editor-form");
+        if (form) {
+            form.addEventListener("submit", async (e) => {
                 e.preventDefault();
-                const btn = document.getElementById("save-btn");
+                const btn = document.getElementById(
+                    "save-btn",
+                ) as HTMLButtonElement | null;
+                if (!btn) return;
+
                 const originalText = btn.innerText;
                 btn.innerText = "Saving...";
                 btn.disabled = true;
 
-                const formData = new FormData(e.target);
+                const target = e.target as HTMLFormElement;
+                const formData = new FormData(target);
                 const data = Object.fromEntries(formData.entries());
 
-                const isNew =
-                    document.getElementById("is-new").value === "true";
-                const originalSlug =
-                    document.getElementById("original-slug").value;
-                const sha = document.getElementById("sha").value;
+                const isNewInput = document.getElementById(
+                    "is-new",
+                ) as HTMLInputElement | null;
+                const originalSlugInput = document.getElementById(
+                    "original-slug",
+                ) as HTMLInputElement | null;
+                const shaInput = document.getElementById(
+                    "sha",
+                ) as HTMLInputElement | null;
+
+                const isNew = isNewInput?.value === "true";
+                const originalSlug = originalSlugInput?.value || "";
+                const sha = shaInput?.value || "";
 
                 // Generate slug from title if new, else use existing unless passed (not supporting rename easily yet)
                 let filename = originalSlug;
                 if (isNew) {
-                    const slug = data.title
+                    const title = (data.title as string) || "";
+                    const slug = title
                         .toLowerCase()
                         .replace(/[^a-z0-9]+/g, "-")
                         .replace(/(^-|-$)+/g, "");
@@ -239,12 +253,13 @@ if (!isNew && slug) {
                         const err = await res.json();
                         alert(`Error saving: ${err.message}`);
                     }
-                } catch (err) {
+                } catch (err: any) {
                     alert(`Error saving: ${err.message}`);
                 } finally {
                     btn.innerText = originalText;
                     btn.disabled = false;
                 }
             });
+        }
     </script>
 </BaseLayout>

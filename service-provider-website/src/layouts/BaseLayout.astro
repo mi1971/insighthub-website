@@ -59,7 +59,7 @@ const { title, description = "Premium Service Provider" } = Astro.props;
 
             const lenis = new Lenis();
 
-            function raf(time) {
+            function raf(time: number) {
                 lenis.raf(time);
                 requestAnimationFrame(raf);
             }

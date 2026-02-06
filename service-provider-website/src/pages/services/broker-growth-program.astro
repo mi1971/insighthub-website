@@ -1,8 +1,22 @@
 ---
 export const prerender = true;
 import ServiceLayout from "../../layouts/ServiceLayout.astro";
+import ParallaxSection from "../../components/ParallaxSection.astro";
 import { Icon } from "astro-icon/components";
 ---
+
+<style is:global>
+    :root {
+        /* Logo Colors: Blue (#3b4e72), Black (#000000), Gold (#997F4E - Darkened) */
+
+        /* Overriding global theme for this page only */
+        --color-main: #ffffff;
+        --color-surface: #f8f9fa; /* Very light cool grey */
+        --color-primary: #000000;
+        --color-subtle: #997f4e; /* Darker Gold */
+        --color-accent: #3b4e72;
+    }
+</style>
 
 <ServiceLayout
     title="Broker Growth Program"
@@ -41,8 +55,22 @@ import { Icon } from "astro-icon/components";
         </div>
     </div>
 
+    <!-- Divider 1 -->
+    <!-- Divider 1 -->
+    <!-- Divider 1 -->
+    <!-- Divider 1 -->
+    <!-- Divider 1 -->
+    <!-- Divider 1 -->
+    <div class="my-20">
+        <ParallaxSection
+            image="/bgf-divider-1.png"
+            height="h-[40vh]"
+            overlay={false}
+        />
+    </div>
+
     <!-- How It Works Section -->
-    <div class="mt-20 animate-on-scroll">
+    <div class="animate-on-scroll">
         <h2 class="text-3xl font-bold mb-10 text-primary">How It Works</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div
@@ -94,8 +122,22 @@ import { Icon } from "astro-icon/components";
         </div>
     </div>
 
+    <!-- Divider 2 -->
+    <!-- Divider 2 -->
+    <!-- Divider 2 -->
+    <!-- Divider 2 -->
+    <!-- Divider 2 -->
+    <!-- Divider 2 -->
+    <div class="my-20">
+        <ParallaxSection
+            image="/bgf-divider-2.png"
+            height="h-[40vh]"
+            overlay={false}
+        />
+    </div>
+
     <!-- What You Get Section -->
-    <div class="mt-20 animate-on-scroll">
+    <div class="animate-on-scroll">
         <h2 class="text-3xl font-bold mb-8 text-primary">
             What You Can Expect
         </h2>
@@ -149,15 +191,29 @@ import { Icon } from "astro-icon/components";
                 </div>
                 <p class="text-subtle leading-snug">
                     Our strategies are designed to deliver consistent,
-                    sustainable growth—not just quick wins.
+                    sustainable growth, not just quick wins.
                 </p>
             </div>
         </div>
     </div>
 
+    <!-- Divider 3 -->
+    <!-- Divider 3 -->
+    <!-- Divider 3 -->
+    <!-- Divider 3 -->
+    <!-- Divider 3 -->
+    <!-- Divider 3 -->
+    <div class="my-20">
+        <ParallaxSection
+            image="/bgf-divider-3.png"
+            height="h-[40vh]"
+            overlay={false}
+        />
+    </div>
+
     <!-- Momentum and ROI Section -->
     <div
-        class="mt-20 bg-primary text-white p-8 md:p-12 rounded-2xl animate-on-scroll"
+        class="bg-primary text-white p-8 md:p-12 rounded-2xl animate-on-scroll"
     >
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
@@ -166,7 +222,7 @@ import { Icon } from "astro-icon/components";
                 </h2>
                 <p class="text-lg opacity-90 mb-6 text-white">
                     "Success is the sum of small efforts repeated day in and day
-                    out."
+                    out." - Robert Collier
                 </p>
                 <p class="opacity-80 leading-relaxed mb-6">
                     Marketing often takes a backseat for brokers. We solve this
@@ -204,7 +260,7 @@ import { Icon } from "astro-icon/components";
                 <p class="mb-6">
                     On average, just <strong class="text-white text-xl"
                         >4 additional settlements</strong
-                    > per year will allow you to break even on your investment.
+                    > per year will allow you to breakeven on your investment of
                 </p>
                 <div class="text-3xl font-bold mb-2">
                     $12,500 <span class="text-sm font-normal opacity-70"
@@ -223,6 +279,20 @@ import { Icon } from "astro-icon/components";
                 </a>
             </div>
         </div>
+    </div>
+
+    <!-- Divider 4 -->
+    <!-- Divider 4 -->
+    <!-- Divider 4 -->
+    <!-- Divider 4 -->
+    <!-- Divider 4 -->
+    <!-- Divider 4 -->
+    <div class="my-20">
+        <ParallaxSection
+            image="/bgf-divider-1.png"
+            height="h-[40vh]"
+            overlay={false}
+        />
     </div>
 
     <!-- Who is this for -->

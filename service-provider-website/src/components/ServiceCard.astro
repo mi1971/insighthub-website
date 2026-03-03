@@ -9,6 +9,7 @@ interface Props {
     href: string;
     class?: string;
     logoClass?: string;
+    target?: string;
 }
 
 const {
@@ -19,11 +20,13 @@ const {
     href,
     class: className,
     logoClass = "h-32",
+    target,
 } = Astro.props;
 ---
 
 <a
     href={href}
+    target={target}
     class:list={[
         "group block p-8 bg-main hover:bg-primary transition-colors duration-500 border border-subtle/20",
         className,

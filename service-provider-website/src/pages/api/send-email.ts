@@ -43,11 +43,18 @@ export const POST: APIRoute = async ({ request }) => {
             { status: 200 }
         );
     } catch (error: any) {
-        console.error("Mailgun Error:", error);
+        // Log the full error to the server console for debugging
+        console.error("Mailgun Request Failed - Full Error:", error);
+        console.error("Mailgun Error Details:", error?.details || "No details provided");
+        console.error("Mailgun Error Message:", error?.message || "No message provided");
+        console.error("Mailgun Error Status:", error?.status || "No status code");
+
         return new Response(
             JSON.stringify({
                 message: "Error sending email",
-                error: error.message,
+                error: error?.message || "Unknown error occurred",
+                details: error?.details || null,
+                status: error?.status || null
             }),
             { status: 500 }
         );

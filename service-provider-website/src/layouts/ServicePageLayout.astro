@@ -1,0 +1,158 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import ParallaxSection from "../components/ParallaxSection.astro";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+    title: string;
+    subtitle: string;
+    heroImage: string;
+    logoImage?: string;
+    features: string[];
+    imagePosition?: string;
+    overlayClass?: string;
+}
+
+const {
+    title,
+    subtitle,
+    heroImage,
+    logoImage,
+    features,
+    imagePosition = "object-center",
+    overlayClass = "bg-accent/40 mix-blend-multiply",
+} = Astro.props;
+---
+
+<BaseLayout title={`${title} | Antigravity Services`} description={subtitle}>
+    <!-- Service Hero with Parallax -->
+    <div
+        class="relative h-[75vh] flex items-center justify-center bg-primary text-main overflow-hidden linda-hero"
+    >
+        <div class="absolute inset-0 z-0">
+            <img
+                src={heroImage}
+                alt={title}
+                class={`w-full h-[120%] object-cover ${imagePosition} linda-hero-img`}
+                style="transform: translateY(-10%)"
+            />
+            <div class={`absolute inset-0 ${overlayClass}`}></div>
+        </div>
+        <div class="relative z-10 container mx-auto px-4 md:px-12 text-center">
+            {logoImage && (
+                <img
+                    src={logoImage}
+                    alt={`${title} logo`}
+                    class="h-16 md:h-20 mx-auto mb-6 invert opacity-90 fade-up"
+                />
+            )}
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tighter mb-4 fade-up">
+                {title}
+            </h1>
+            <p class="text-xl md:text-2xl text-surface max-w-2xl mx-auto fade-up">
+                {subtitle}
+            </p>
+            <div class="mt-8 fade-up">
+                <a
+                    href="#overview"
+                    class="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm uppercase tracking-widest"
+                >
+                    <span>Explore</span>
+                    <Icon name="mdi:chevron-down" class="w-5 h-5 animate-bounce" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content: Full Width -->
+    <section id="overview" class="py-20 md:py-32 bg-main">
+        <div class="container mx-auto px-4 md:px-12">
+            <div class="max-w-5xl mx-auto">
+                <slot />
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Bottom Section -->
+    <section class="py-20 bg-surface border-t border-subtle/20">
+        <div class="container mx-auto px-4 md:px-12">
+            <div class="max-w-5xl mx-auto">
+                <h3
+                    class="text-center text-sm font-bold uppercase tracking-[0.25em] text-subtle mb-12 fade-up"
+                >
+                    Key Areas of Focus
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-6 stagger-parent">
+                    {features.map((feature) => (
+                        <div class="flex flex-col items-center text-center gap-3 stagger-child">
+                            <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
+                                <Icon
+                                    name="mdi:check-circle-outline"
+                                    class="w-6 h-6 text-accent"
+                                />
+                            </div>
+                            <span class="text-primary text-sm font-medium">{feature}</span>
+                        </div>
+                    ))}
+                </div>
+
+                <div class="mt-16 text-center fade-up">
+                    <h4 class="font-bold mb-2 text-primary">
+                        Need this service?
+                    </h4>
+                    <p class="text-sm text-subtle mb-6">
+                        Contact our team for more information.
+                    </p>
+                    <a
+                        href="/contact"
+                        class="inline-flex items-center justify-center px-10 py-4 bg-primary text-main font-bold uppercase tracking-widest hover:bg-accent transition-colors"
+                    >
+                        Contact our Team
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA Parallax -->
+    <ParallaxSection
+        image="/footer-bg.jpg"
+        height="h-[40vh]"
+        overlayClass="bg-accent/50 mix-blend-multiply"
+    >
+        <div class="absolute inset-0 flex items-center justify-center">
+            <h2 class="text-4xl font-bold text-white">
+                Streamline your business today.
+            </h2>
+        </div>
+    </ParallaxSection>
+</BaseLayout>
+
+<style>
+    @keyframes heroFloat {
+        0%, 100% { transform: translateY(-10%); }
+        50% { transform: translateY(-8%); }
+    }
+</style>
+
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero parallax on scroll
+    const heroImg = document.querySelector('.linda-hero-img');
+    if (heroImg) {
+        gsap.to(heroImg, {
+            y: "10%",
+            ease: "none",
+            scrollTrigger: {
+                trigger: '.linda-hero',
+                start: "top top",
+                end: "bottom top",
+                scrub: true,
+            }
+        });
+    }
+</script>

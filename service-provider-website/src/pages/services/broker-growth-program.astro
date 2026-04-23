@@ -1,6 +1,6 @@
 ---
 export const prerender = true;
-import ServiceLayout from "../../layouts/ServiceLayout.astro";
+import ServicePageLayout from "../../layouts/ServicePageLayout.astro";
 import ParallaxSection from "../../components/ParallaxSection.astro";
 import { Icon } from "astro-icon/components";
 ---
@@ -18,7 +18,7 @@ import { Icon } from "astro-icon/components";
     }
 </style>
 
-<ServiceLayout
+<ServicePageLayout
     title="Broker Growth Framework"
     subtitle="Your Marketing Assistant for Old School Relationship Building"
     logoImage="/images/logo-bgf-brown.png"
@@ -33,23 +33,26 @@ import { Icon } from "astro-icon/components";
     ]}
 >
     <!-- Intro Section -->
-    <div class="space-y-8 animate-on-scroll">
-        <p class="text-lg leading-relaxed">
+    <div class="space-y-8 fade-up text-lg leading-relaxed mb-20 max-w-4xl mx-auto">
+        <p>
             Building relationships with referral partners is critical for a
             thriving mortgage brokerage, but who has the time? The Broker Growth
             Framework does it for you. We build, nurture, and strengthen your
             referral partnerships so you can focus on serving your clients,
             while we grow your leads.
         </p>
-        <div class="bg-primary/5 p-8 rounded-xl border border-primary/10">
-            <h3 class="text-xl font-bold mb-4 text-primary">Why Us?</h3>
-            <p class="text-lg mb-4">
+        <div class="bg-primary/5 p-8 md:p-12 rounded-2xl border border-primary/10 shadow-sm">
+            <h3 class="text-2xl font-bold mb-6 text-primary flex items-center gap-3">
+                <Icon name="mdi:star-circle" class="w-8 h-8 text-subtle" />
+                Why Us?
+            </h3>
+            <p class="mb-6">
                 With over 20 years of hands-on broking experience, we understand
                 the power of strong referral networks. The Broker Growth
                 Framework was built on what actually works: real conversations,
                 strategic touchpoints, and old-school values.
             </p>
-            <p class="font-medium text-lg text-primary">
+            <p class="font-bold text-xl text-primary bg-white p-6 rounded-lg border-l-4 border-accent shadow-sm inline-block">
                 We don’t just send emails. We pick up the phone. We remember
                 birthdays. We create personal connections.
             </p>
@@ -57,12 +60,7 @@ import { Icon } from "astro-icon/components";
     </div>
 
     <!-- Divider 1 -->
-    <!-- Divider 1 -->
-    <!-- Divider 1 -->
-    <!-- Divider 1 -->
-    <!-- Divider 1 -->
-    <!-- Divider 1 -->
-    <div class="my-20">
+    <div class="mb-20 fade-up -mx-4 md:-mx-12">
         <ParallaxSection
             image="/bgf-divider-1.png"
             height="h-[40vh]"
@@ -71,57 +69,54 @@ import { Icon } from "astro-icon/components";
     </div>
 
     <!-- How It Works Section -->
-    <div class="animate-on-scroll">
-        <h2 class="text-3xl font-bold mb-10 text-primary">How It Works</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div
-                class="relative p-6 bg-surface rounded-lg border border-subtle/20 shadow-sm hover:shadow-md transition-shadow"
-            >
-                <div
-                    class="absolute -top-4 -left-4 w-12 h-12 bg-accent text-white flex items-center justify-center rounded-full font-bold text-xl"
-                >
+    <div class="mb-20">
+        <div class="text-center mb-12 fade-up">
+            <h2 class="text-3xl font-bold text-primary flex items-center justify-center gap-3">
+                <Icon name="mdi:cogs" class="w-8 h-8 text-accent" />
+                How It Works
+            </h2>
+            <div class="h-1 w-20 bg-accent mx-auto mt-4 rounded"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-parent">
+            <div class="relative p-8 bg-white rounded-xl border border-subtle/20 shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all stagger-child group">
+                <div class="absolute -top-6 -left-6 w-14 h-14 bg-accent text-white flex items-center justify-center rounded-full font-bold text-2xl shadow-md border-4 border-white group-hover:scale-110 transition-transform">
                     1
                 </div>
-                <h3 class="text-xl font-bold mb-4 mt-2">
+                <h3 class="text-xl font-bold mb-4 mt-4 text-primary">
                     Marketing Done For You
                 </h3>
-                <p class="text-subtle">
+                <p class="text-gray-600 leading-relaxed">
                     You spend 5 minutes a week approving resources; we handle
                     the relationship building. We create and send everything
                     under your brand, positioning you as an expert in your
                     community without adding to your workload.
                 </p>
             </div>
-            <div
-                class="relative p-6 bg-surface rounded-lg border border-subtle/20 shadow-sm hover:shadow-md transition-shadow"
-            >
-                <div
-                    class="absolute -top-4 -left-4 w-12 h-12 bg-accent text-white flex items-center justify-center rounded-full font-bold text-xl"
-                >
+            
+            <div class="relative p-8 bg-white rounded-xl border border-subtle/20 shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all stagger-child group">
+                <div class="absolute -top-6 -left-6 w-14 h-14 bg-accent text-white flex items-center justify-center rounded-full font-bold text-2xl shadow-md border-4 border-white group-hover:scale-110 transition-transform">
                     2
                 </div>
-                <h3 class="text-xl font-bold mb-4 mt-2">
+                <h3 class="text-xl font-bold mb-4 mt-4 text-primary">
                     Consistent Engagement
                 </h3>
-                <p class="text-subtle">
+                <p class="text-gray-600 leading-relaxed">
                     We manage regular touchpoints with agents on your behalf,
                     keeping you top-of-mind. From weekly communication and
                     valuable resources to SMS check-ins and helpful tips, we
                     keep the conversation going so relationships grow naturally.
                 </p>
             </div>
-            <div
-                class="relative p-6 bg-surface rounded-lg border border-subtle/20 shadow-sm hover:shadow-md transition-shadow"
-            >
-                <div
-                    class="absolute -top-4 -left-4 w-12 h-12 bg-accent text-white flex items-center justify-center rounded-full font-bold text-xl"
-                >
+            
+            <div class="relative p-8 bg-white rounded-xl border border-subtle/20 shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all stagger-child group">
+                <div class="absolute -top-6 -left-6 w-14 h-14 bg-accent text-white flex items-center justify-center rounded-full font-bold text-2xl shadow-md border-4 border-white group-hover:scale-110 transition-transform">
                     3
                 </div>
-                <h3 class="text-xl font-bold mb-4 mt-2">
+                <h3 class="text-xl font-bold mb-4 mt-4 text-primary">
                     Turn Relationships Into Leads
                 </h3>
-                <p class="text-subtle">
+                <p class="text-gray-600 leading-relaxed">
                     With consistent communication and stronger connections,
                     referrals start to flow. You become the trusted lending
                     partner agents rely on, creating a steady flow of referrals,
@@ -132,12 +127,7 @@ import { Icon } from "astro-icon/components";
     </div>
 
     <!-- Divider 2 -->
-    <!-- Divider 2 -->
-    <!-- Divider 2 -->
-    <!-- Divider 2 -->
-    <!-- Divider 2 -->
-    <!-- Divider 2 -->
-    <div class="my-20">
+    <div class="mb-20 fade-up -mx-4 md:-mx-12">
         <ParallaxSection
             image="/bgf-divider-2.png"
             height="h-[40vh]"
@@ -146,73 +136,72 @@ import { Icon } from "astro-icon/components";
     </div>
 
     <!-- What You Get Section -->
-    <div class="animate-on-scroll">
-        <h2 class="text-3xl font-bold mb-8 text-primary">
-            What You Can Expect
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="p-6 bg-surface rounded-lg border border-subtle/10">
-                <div class="flex items-center gap-2 mb-1">
-                    <Icon
-                        name="mdi:flash"
-                        class="w-6 h-6 text-accent flex-shrink-0"
-                    />
-                    <span class="text-lg font-bold">Fast Results</span>
+    <div class="mb-20">
+        <div class="text-center mb-12 fade-up">
+            <h2 class="text-3xl font-bold text-primary flex items-center justify-center gap-3">
+                <Icon name="mdi:handshake" class="w-8 h-8 text-accent" />
+                What You Can Expect
+            </h2>
+            <div class="h-1 w-20 bg-accent mx-auto mt-4 rounded"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 stagger-parent max-w-4xl mx-auto">
+            <div class="p-8 bg-surface rounded-xl border border-subtle/10 hover:bg-white hover:shadow-md transition-all stagger-child flex items-start gap-4">
+                <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                    <Icon name="mdi:flash" class="w-6 h-6 text-accent" />
                 </div>
-                <p class="text-subtle leading-snug">
-                    Start seeing stronger relationships with existing partners
-                    in as little as 2 weeks, and watch the leads grow.
-                </p>
+                <div>
+                    <h3 class="text-xl font-bold text-primary mb-2">Fast Results</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Start seeing stronger relationships with existing partners
+                        in as little as 2 weeks, and watch the leads grow.
+                    </p>
+                </div>
             </div>
-            <div class="p-6 bg-surface rounded-lg border border-subtle/10">
-                <div class="flex items-center gap-2 mb-1">
-                    <Icon
-                        name="mdi:handshake"
-                        class="w-6 h-6 text-accent flex-shrink-0"
-                    />
-                    <span class="text-lg font-bold">Ongoing Engagement</span>
+            
+            <div class="p-8 bg-surface rounded-xl border border-subtle/10 hover:bg-white hover:shadow-md transition-all stagger-child flex items-start gap-4">
+                <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                    <Icon name="mdi:account-group" class="w-6 h-6 text-accent" />
                 </div>
-                <p class="text-subtle leading-snug">
-                    We keep your referral partners engaged and loyal with
-                    valuable resources that help them succeed.
-                </p>
+                <div>
+                    <h3 class="text-xl font-bold text-primary mb-2">Ongoing Engagement</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        We keep your referral partners engaged and loyal with
+                        valuable resources that help them succeed.
+                    </p>
+                </div>
             </div>
-            <div class="p-6 bg-surface rounded-lg border border-subtle/10">
-                <div class="flex items-center gap-2 mb-1">
-                    <Icon
-                        name="mdi:account-tie"
-                        class="w-6 h-6 text-accent flex-shrink-0"
-                    />
-                    <span class="text-lg font-bold">Minimal Effort</span>
+            
+            <div class="p-8 bg-surface rounded-xl border border-subtle/10 hover:bg-white hover:shadow-md transition-all stagger-child flex items-start gap-4">
+                <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                    <Icon name="mdi:account-tie" class="w-6 h-6 text-accent" />
                 </div>
-                <p class="text-subtle leading-snug">
-                    No need to micromanage. We handle the relationship-building
-                    while you focus on scaling your business.
-                </p>
+                <div>
+                    <h3 class="text-xl font-bold text-primary mb-2">Minimal Effort</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        No need to micromanage. We handle the relationship-building
+                        while you focus on scaling your business.
+                    </p>
+                </div>
             </div>
-            <div class="p-6 bg-surface rounded-lg border border-subtle/10">
-                <div class="flex items-center gap-2 mb-1">
-                    <Icon
-                        name="mdi:chart-areaspline"
-                        class="w-6 h-6 text-accent flex-shrink-0"
-                    />
-                    <span class="text-lg font-bold">Sustainable Growth</span>
+            
+            <div class="p-8 bg-surface rounded-xl border border-subtle/10 hover:bg-white hover:shadow-md transition-all stagger-child flex items-start gap-4">
+                <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                    <Icon name="mdi:chart-areaspline" class="w-6 h-6 text-accent" />
                 </div>
-                <p class="text-subtle leading-snug">
-                    Our strategies are designed to deliver consistent,
-                    sustainable growth, not just quick wins.
-                </p>
+                <div>
+                    <h3 class="text-xl font-bold text-primary mb-2">Sustainable Growth</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Our strategies are designed to deliver consistent,
+                        sustainable growth, not just quick wins.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Divider 3 -->
-    <!-- Divider 3 -->
-    <!-- Divider 3 -->
-    <!-- Divider 3 -->
-    <!-- Divider 3 -->
-    <!-- Divider 3 -->
-    <div class="my-20">
+    <div class="mb-20 fade-up -mx-4 md:-mx-12">
         <ParallaxSection
             image="/bgf-divider-3.png"
             height="h-[40vh]"
@@ -221,71 +210,78 @@ import { Icon } from "astro-icon/components";
     </div>
 
     <!-- Momentum and ROI Section -->
-    <div
-        class="bg-primary text-white p-8 md:p-12 rounded-2xl animate-on-scroll"
-    >
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <div class="bg-primary text-white p-8 md:p-16 rounded-3xl fade-up shadow-xl mb-20 relative overflow-hidden">
+        <!-- Abstract shape background -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-accent/30 rounded-full mix-blend-screen filter blur-3xl translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-subtle/20 rounded-full mix-blend-screen filter blur-3xl -translate-x-1/2 translate-y-1/2"></div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
             <div>
-                <h2 class="text-3xl font-bold mb-6 text-white">
+                <h2 class="text-4xl font-bold mb-6 text-white tracking-tight">
                     Momentum & Consistency
                 </h2>
-                <p class="text-lg opacity-90 mb-6 text-white">
+                <blockquote class="text-2xl font-light italic opacity-90 mb-8 text-white border-l-4 border-subtle pl-6">
                     "Success is the sum of small efforts repeated day in and day
-                    out." - Robert Collier
-                </p>
-                <p class="opacity-80 leading-relaxed mb-6">
+                    out." <span class="block text-sm mt-3 not-italic text-subtle font-bold tracking-widest uppercase">— Robert Collier</span>
+                </blockquote>
+                <p class="text-lg opacity-80 leading-relaxed mb-8">
                     Marketing often takes a backseat for brokers. We solve this
                     by taking care of it for you, ensuring your business remains
                     top-of-mind and creating a steady flow of leads that fuel
                     growth.
                 </p>
-                <ul class="space-y-3">
-                    <li class="flex items-center gap-3">
-                        <Icon
-                            name="mdi:check-circle"
-                            class="w-6 h-6 text-accent"
-                        />
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="flex items-center gap-3 bg-white/5 p-4 rounded-lg border border-white/10">
+                        <Icon name="mdi:check-circle" class="w-6 h-6 text-subtle" />
                         <span class="font-medium">More Leads</span>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <Icon
-                            name="mdi:check-circle"
-                            class="w-6 h-6 text-accent"
-                        />
+                    </div>
+                    <div class="flex items-center gap-3 bg-white/5 p-4 rounded-lg border border-white/10">
+                        <Icon name="mdi:check-circle" class="w-6 h-6 text-subtle" />
                         <span class="font-medium">Consistent Growth</span>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <Icon
-                            name="mdi:check-circle"
-                            class="w-6 h-6 text-accent"
-                        />
+                    </div>
+                    <div class="flex items-center gap-3 bg-white/5 p-4 rounded-lg border border-white/10 sm:col-span-2">
+                        <Icon name="mdi:check-circle" class="w-6 h-6 text-subtle" />
                         <span class="font-medium">Loyal Referral Partners</span>
-                    </li>
-                </ul>
-            </div>
-            <div
-                class="bg-white/10 p-8 rounded-xl backdrop-blur-sm border border-white/10"
-            >
-                <h3 class="text-2xl font-bold mb-4 text-white">The ROI</h3>
-                <p class="mb-6">
-                    On average, just <strong class="text-white text-xl"
-                        >4 additional settlements</strong
-                    > per year will allow you to breakeven on your investment of
-                </p>
-                <div class="text-3xl font-bold mb-2">
-                    $1,092 <span class="text-sm font-normal opacity-70"
-                        >+ GST / month</span
-                    >
+                    </div>
                 </div>
-                <p class="text-sm opacity-70 mb-8">
-                    A fraction of the cost of hiring a marketing assistant.
+            </div>
+            
+            <div class="bg-white text-primary p-10 rounded-2xl shadow-2xl relative transform lg:scale-105">
+                <div class="absolute -top-6 -right-6 w-24 h-24 bg-subtle text-white rounded-full flex items-center justify-center font-bold text-center shadow-lg transform rotate-12">
+                    <span class="leading-tight">Proven<br/>ROI</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-6 text-primary flex items-center gap-2">
+                    <Icon name="mdi:calculator-variant" class="w-6 h-6 text-accent" />
+                    The Investment
+                </h3>
+                <p class="text-gray-600 mb-8 leading-relaxed">
+                    On average, just <strong class="text-accent text-xl bg-accent/10 px-2 py-1 rounded">4 additional settlements</strong> 
+                    per year will allow you to breakeven on your investment of:
                 </p>
-                <p class="text-sm opacity-70 mb-8">
-                    *Discounted for upfront annual payment.
-                </p>
+                
+                <div class="bg-surface p-8 rounded-xl text-center mb-8 border border-subtle/20">
+                    <div class="text-5xl font-black text-primary mb-2 flex justify-center items-end gap-1">
+                        $1,092
+                    </div>
+                    <p class="text-sm font-bold text-subtle uppercase tracking-widest">
+                        + GST / Month
+                    </p>
+                </div>
+                
+                <div class="space-y-3 mb-10 text-sm text-gray-500 font-medium">
+                    <p class="flex items-start gap-2">
+                        <Icon name="mdi:information" class="w-5 h-5 text-accent shrink-0" />
+                        A fraction of the cost of hiring a marketing assistant.
+                    </p>
+                    <p class="flex items-start gap-2">
+                        <Icon name="mdi:information" class="w-5 h-5 text-accent shrink-0" />
+                        *Discounted for upfront annual payment.
+                    </p>
+                </div>
+                
                 <a
                     href="/contact"
-                    class="block w-full py-4 bg-accent text-white text-center font-bold uppercase tracking-widest hover:bg-accent/90 transition-colors rounded"
+                    class="block w-full py-5 bg-accent text-white text-center font-bold text-lg uppercase tracking-widest hover:bg-primary transition-all duration-300 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1"
                 >
                     Start Growing
                 </a>
@@ -294,12 +290,7 @@ import { Icon } from "astro-icon/components";
     </div>
 
     <!-- Divider 4 -->
-    <!-- Divider 4 -->
-    <!-- Divider 4 -->
-    <!-- Divider 4 -->
-    <!-- Divider 4 -->
-    <!-- Divider 4 -->
-    <div class="my-20">
+    <div class="mb-20 fade-up -mx-4 md:-mx-12">
         <ParallaxSection
             image="/bgf-divider-1.png"
             height="h-[40vh]"
@@ -308,82 +299,52 @@ import { Icon } from "astro-icon/components";
     </div>
 
     <!-- Who is this for -->
-    <div class="mt-20 animate-on-scroll">
-        <h2 class="text-3xl font-bold mb-8 text-primary">Who Is This For?</h2>
-        <div class="bg-surface border-l-4 border-accent p-6 shadow-sm">
-            <ul class="space-y-4 text-lg text-subtle">
-                <li class="flex items-start gap-3">
-                    <Icon
-                        name="mdi:arrow-right"
-                        class="w-6 h-6 text-accent mt-1 flex-shrink-0"
-                    />
-                    <span
-                        >Brokers who want consistent leads and growth through
-                        increased exposure and positioning as an industry
-                        expert.</span
-                    >
+    <div class="mb-20 max-w-4xl mx-auto fade-up">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-primary flex items-center justify-center gap-3">
+                <Icon name="mdi:target-account" class="w-8 h-8 text-accent" />
+                Who Is This For?
+            </h2>
+            <div class="h-1 w-20 bg-accent mx-auto mt-4 rounded"></div>
+        </div>
+        
+        <div class="bg-white border text-lg border-subtle/20 rounded-2xl p-8 md:p-12 shadow-sm">
+            <ul class="space-y-6 text-gray-700">
+                <li class="flex items-start gap-4">
+                    <div class="mt-1 bg-accent/10 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Icon name="mdi:arrow-right" class="w-5 h-5 text-accent" />
+                    </div>
+                    <span class="leading-relaxed">
+                        <strong class="text-primary font-bold">Brokers who want consistent leads</strong> and growth through
+                        increased exposure and positioning as an industry expert.
+                    </span>
                 </li>
-                <li class="flex items-start gap-3">
-                    <Icon
-                        name="mdi:arrow-right"
-                        class="w-6 h-6 text-accent mt-1 flex-shrink-0"
-                    />
-                    <span
-                        >Brokers who value 'old school' relationship building
-                        but lack the time for consistent implementation.</span
-                    >
+                <li class="flex items-start gap-4">
+                    <div class="mt-1 bg-accent/10 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Icon name="mdi:arrow-right" class="w-5 h-5 text-accent" />
+                    </div>
+                    <span class="leading-relaxed">
+                        Brokers who value <strong class="text-primary font-bold">'old school' relationship building</strong> 
+                        but lack the time for consistent implementation.
+                    </span>
                 </li>
-                <li class="flex items-start gap-3">
-                    <Icon
-                        name="mdi:arrow-right"
-                        class="w-6 h-6 text-accent mt-1 flex-shrink-0"
-                    />
-                    <span
-                        >Brokers with established relationships that need more
-                        nurturing.</span
-                    >
+                <li class="flex items-start gap-4">
+                    <div class="mt-1 bg-accent/10 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Icon name="mdi:arrow-right" class="w-5 h-5 text-accent" />
+                    </div>
+                    <span class="leading-relaxed">
+                        Brokers with established relationships that <strong class="text-primary font-bold">need more nurturing</strong>.
+                    </span>
                 </li>
-                <li class="flex items-start gap-3">
-                    <Icon
-                        name="mdi:arrow-right"
-                        class="w-6 h-6 text-accent mt-1 flex-shrink-0"
-                    />
-                    <span
-                        >Brokers who would love a marketing assistant without
-                        having to employ one!</span
-                    >
+                <li class="flex items-start gap-4">
+                    <div class="mt-1 bg-accent/10 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Icon name="mdi:arrow-right" class="w-5 h-5 text-accent" />
+                    </div>
+                    <span class="leading-relaxed">
+                        Brokers who would love a marketing assistant <strong class="text-primary font-bold">without having to employ one!</strong>
+                    </span>
                 </li>
             </ul>
         </div>
     </div>
-</ServiceLayout>
-
-<script>
-    import { gsap } from "gsap";
-    import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    const elements = document.querySelectorAll(".animate-on-scroll");
-
-    elements.forEach((element) => {
-        gsap.fromTo(
-            element,
-            {
-                y: 50,
-                opacity: 0,
-            },
-            {
-                y: 0,
-                opacity: 1,
-                duration: 1,
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: element,
-                    start: "top 85%",
-                    toggleActions: "play none none reverse",
-                },
-            },
-        );
-    });
-</script>
+</ServicePageLayout>

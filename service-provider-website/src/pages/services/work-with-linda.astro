@@ -1,13 +1,14 @@
 ---
 export const prerender = true;
-import ServiceLayout from "../../layouts/ServiceLayout.astro";
+import ServicePageLayout from "../../layouts/ServicePageLayout.astro";
+import ParallaxSection from "../../components/ParallaxSection.astro";
 import { Icon } from "astro-icon/components";
 ---
 
-<ServiceLayout
+<ServicePageLayout
     title="Work With Linda"
     subtitle="Business Strategy & Performance Consultant | Fractional Transformation Lead"
-    logoImage="/images/logo-work-with-linda-brown.png"
+    logoImage="/images/logo-work-with-linda.png"
     heroImage="/images/linda-banner-alt.png"
     imagePosition="object-[50%_25%]"
     features={[
@@ -19,7 +20,7 @@ import { Icon } from "astro-icon/components";
     ]}
 >
     <!-- Visual Area 1: Introduction, Philosophy & Fractional Role (Plain Text) -->
-    <div class="max-w-4xl mx-auto mb-20 text-lg leading-relaxed space-y-6">
+    <div class="max-w-4xl mx-auto mb-20 text-lg leading-relaxed space-y-6 fade-up">
         <p>
             I work with founder-led and franchisee businesses who are ready for
             their next chapter of either growth, stabilisation or scale but need
@@ -53,41 +54,45 @@ import { Icon } from "astro-icon/components";
         </p>
     </div>
 
+    <!-- Parallax Separator 1 -->
+    <div class="mb-20 fade-up -mx-4 md:-mx-12">
+        <ParallaxSection
+            image="/images/linda-strategy-workspace.png"
+            height="h-[50vh]"
+            overlayClass="bg-accent/20"
+        />
+    </div>
+
     <!-- Visual Area 2: Experience (Colored Box) -->
-    <div class="bg-gray-50 -mx-4 md:-mx-12 px-4 md:px-12 py-16 mb-20">
+    <div class="bg-gray-50 -mx-4 md:-mx-12 px-4 md:px-12 py-16 mb-20 fade-up">
         <div class="max-w-4xl mx-auto text-lg leading-relaxed space-y-6">
-            <h3
-                class="text-2xl font-bold mb-8 text-primary flex items-center gap-3"
-            >
-                <Icon
-                    name="mdi:briefcase-outline"
-                    class="w-6 h-6 text-accent"
-                />
+            <h3 class="text-2xl font-bold mb-8 text-primary flex items-center gap-3 fade-up">
+                <Icon name="mdi:briefcase-outline" class="w-6 h-6 text-accent" />
                 Experience & Track Record
             </h3>
 
-            <p>
-                I’ve spent more than two decades working across finance,
-                operations, people, culture, product-based businesses, licensing
-                and franchise models, software, advisory and small business.
-            </p>
-            <p>
-                Earlier in my career, my husband and I built and sold several
-                businesses, including one acquired by a publicly listed
-                Australian company. That experience shaped the way I think about
-                scale, value creation, commercial discipline and the true cost
-                of growth.
-            </p>
-            <p>
-                I’ve grown teams, built systems from scratch, supported exits,
-                navigated restructures, mentored leaders, and guided owners
-                through the messy middle stages where everything feels too fast,
-                too heavy or too uncertain.
-            </p>
+            <div class="fade-up">
+                <p class="mb-6">
+                    I’ve spent more than two decades working across finance,
+                    operations, people, culture, product-based businesses, licensing
+                    and franchise models, software, advisory and small business.
+                </p>
+                <p class="mb-6">
+                    Earlier in my career, my husband and I built and sold several
+                    businesses, including one acquired by a publicly listed
+                    Australian company. That experience shaped the way I think about
+                    scale, value creation, commercial discipline and the true cost
+                    of growth.
+                </p>
+                <p>
+                    I’ve grown teams, built systems from scratch, supported exits,
+                    navigated restructures, mentored leaders, and guided owners
+                    through the messy middle stages where everything feels too fast,
+                    too heavy or too uncertain.
+                </p>
+            </div>
 
-            <blockquote
-                class="italic text-primary font-medium mt-8 border-l-4 border-accent pl-6 py-2"
-            >
+            <blockquote class="italic text-primary font-medium mt-8 border-l-4 border-accent pl-6 py-4 bg-white/50 rounded-r-lg shadow-sm fade-up">
                 "Small businesses value the speed and pragmatism. Medium-sized
                 businesses value the commercial insight. Everyone values having
                 someone in their corner who can carry weight without needing a
@@ -96,120 +101,134 @@ import { Icon } from "astro-icon/components";
         </div>
     </div>
 
+    <!-- Parallax Separator 2 -->
+    <div class="mb-20 fade-up -mx-4 md:-mx-12">
+        <ParallaxSection
+            image="/images/linda-team-collaboration.png"
+            height="h-[40vh]"
+            overlayClass="bg-primary/30 mix-blend-multiply"
+        />
+    </div>
+
     <!-- Visual Area 3: Founder Perspective (Plain Text) -->
-    <div class="max-w-4xl mx-auto mb-20 text-lg leading-relaxed space-y-6">
-        <h3
-            class="text-2xl font-bold mb-6 text-primary flex items-center gap-3"
-        >
+    <div class="max-w-4xl mx-auto mb-20 text-lg leading-relaxed space-y-6 fade-up">
+        <h3 class="text-2xl font-bold mb-6 text-primary flex items-center gap-3">
             <Icon name="mdi:leaf" class="w-6 h-6 text-accent" />
             The Founder Perspective
         </h3>
 
-        <p>
-            Alongside my consulting work, I’m also the founder of BodFood, our
-            clean, Australian-made haircare brand. Building BodFood keeps my
-            strategic work deeply practical, everything I teach, I also apply.
-        </p>
-        <p>
-            Product development, cashflow, supply chain, team, customer
-            experience, creative direction, marketing, wholesale.. It's all part
-            of my lived experience and current life. And because BodFood is
-            intentionally an independent Indie brand, I still handwrite every
-            note that goes out with each order, whether it’s for a long-time
-            online customer or a stockist on the other side of the country.
-        </p>
-        <p>
-            It’s steady, deliberate work that reminds me every day that small
-            touches still matter and that old school connection and intention
-            have great impact and meaning.
-        </p>
-        <p>
-            This dual life of strategist and creative maker gives me a
-            cross-section of insight founders value. I understand the pressure,
-            the pace, the decisions and the emotional load because I live them
-            myself.
-        </p>
+        <div class="stagger-parent space-y-6">
+            <p class="stagger-child">
+                Alongside my consulting work, I’m also the founder of BodFood, our
+                clean, Australian-made haircare brand. Building BodFood keeps my
+                strategic work deeply practical, everything I teach, I also apply.
+            </p>
+            <p class="stagger-child">
+                Product development, cashflow, supply chain, team, customer
+                experience, creative direction, marketing, wholesale.. It's all part
+                of my lived experience and current life. And because BodFood is
+                intentionally an independent Indie brand, I still handwrite every
+                note that goes out with each order, whether it’s for a long-time
+                online customer or a stockist on the other side of the country.
+            </p>
+            <p class="stagger-child">
+                It’s steady, deliberate work that reminds me every day that small
+                touches still matter and that old school connection and intention
+                have great impact and meaning.
+            </p>
+            <p class="stagger-child font-medium text-primary bg-surface/50 p-6 rounded-lg border border-subtle/10">
+                This dual life of strategist and creative maker gives me a
+                cross-section of insight founders value. I understand the pressure,
+                the pace, the decisions and the emotional load because I live them
+                myself.
+            </p>
+        </div>
     </div>
 
-    <div class="max-w-4xl mx-auto mb-20">
+    <!-- Parallax Separator 3 -->
+    <div class="mb-20 fade-up -mx-4 md:-mx-12">
+        <ParallaxSection
+            image="/images/linda-founder-workspace.png"
+            height="h-[50vh]"
+            overlayClass="bg-accent/10"
+        />
+    </div>
+
+    <div class="max-w-5xl mx-auto mb-20">
         <!-- Section 5: Services -->
-        <h3
-            class="text-2xl font-bold mb-8 text-primary flex items-center gap-3"
-        >
-            <Icon name="mdi:layers-outline" class="w-6 h-6 text-accent" />
-            Services
-        </h3>
-        <div class="space-y-8">
-            <div
-                class="p-6 bg-white rounded-lg border border-subtle/20 shadow-sm"
-            >
-                <h4 class="text-xl font-bold text-primary mb-2">
+        <div class="text-center mb-12 fade-up">
+            <h3 class="text-3xl font-bold text-primary flex items-center justify-center gap-3">
+                <Icon name="mdi:layers-outline" class="w-8 h-8 text-accent" />
+                Services
+            </h3>
+            <div class="h-1 w-20 bg-accent mx-auto mt-4 rounded"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 stagger-parent">
+            <div class="p-8 bg-white rounded-xl border border-subtle/20 shadow-sm hover:shadow-md transition-shadow stagger-child relative overflow-hidden group">
+                <div class="absolute top-0 left-0 w-1 h-full bg-accent transition-transform transform scale-y-0 group-hover:scale-y-100 origin-bottom"></div>
+                <h4 class="text-xl font-bold text-primary mb-3">
                     Business Strategy & Performance Consulting
                 </h4>
-                <p class="text-gray-700">
+                <p class="text-gray-700 leading-relaxed">
                     For founders who want clarity, direction and commercial
                     discipline. Together we sharpen your strategic priorities,
                     remove operational drag and align the business so growth
                     becomes clean rather than chaotic.
                 </p>
             </div>
-            <div
-                class="p-6 bg-white rounded-lg border border-subtle/20 shadow-sm"
-            >
-                <h4 class="text-xl font-bold text-primary mb-2">
+            <div class="p-8 bg-white rounded-xl border border-subtle/20 shadow-sm hover:shadow-md transition-shadow stagger-child relative overflow-hidden group">
+                <div class="absolute top-0 left-0 w-1 h-full bg-accent transition-transform transform scale-y-0 group-hover:scale-y-100 origin-bottom"></div>
+                <h4 class="text-xl font-bold text-primary mb-3">
                     Fractional Transformation Lead
                 </h4>
-                <p class="text-gray-700">
+                <p class="text-gray-700 leading-relaxed">
                     When you need a strategic operator but not a full-time
                     executive. I step in part-time to redesign systems, lift
                     performance, streamline workflow, strengthen leadership and
                     rebuild the rhythm of the business.
                 </p>
             </div>
-            <div
-                class="p-6 bg-white rounded-lg border border-subtle/20 shadow-sm"
-            >
-                <h4 class="text-xl font-bold text-primary mb-2">
+            <div class="p-8 bg-white rounded-xl border border-subtle/20 shadow-sm hover:shadow-md transition-shadow stagger-child relative overflow-hidden group">
+                <div class="absolute top-0 left-0 w-1 h-full bg-accent transition-transform transform scale-y-0 group-hover:scale-y-100 origin-bottom"></div>
+                <h4 class="text-xl font-bold text-primary mb-3">
                     Growth, Systems & Scale Support
                 </h4>
-                <p class="text-gray-700">
+                <p class="text-gray-700 leading-relaxed">
                     For businesses expanding, licensing, franchising or
                     preparing for a more sophisticated operating cadence. I
                     bring structure, repeatability and decision-making
                     frameworks that keep growth controlled and sustainable.
                 </p>
             </div>
-            <div
-                class="p-6 bg-white rounded-lg border border-subtle/20 shadow-sm"
-            >
-                <h4 class="text-xl font-bold text-primary mb-2">
+            <div class="p-8 bg-white rounded-xl border border-subtle/20 shadow-sm hover:shadow-md transition-shadow stagger-child relative overflow-hidden group">
+                <div class="absolute top-0 left-0 w-1 h-full bg-accent transition-transform transform scale-y-0 group-hover:scale-y-100 origin-bottom"></div>
+                <h4 class="text-xl font-bold text-primary mb-3">
                     People & Performance Advisory
                 </h4>
-                <p class="text-gray-700">
+                <p class="text-gray-700 leading-relaxed">
                     Culture, accountability, communication, team structure and
                     leadership clarity. I help founders build capable teams with
                     less drama and stronger performance.
                 </p>
             </div>
-            <div
-                class="p-6 bg-white rounded-lg border border-subtle/20 shadow-sm"
-            >
-                <h4 class="text-xl font-bold text-primary mb-2">
+            <div class="p-8 bg-white rounded-xl border border-subtle/20 shadow-sm hover:shadow-md transition-shadow stagger-child relative overflow-hidden group">
+                <div class="absolute top-0 left-0 w-1 h-full bg-accent transition-transform transform scale-y-0 group-hover:scale-y-100 origin-bottom"></div>
+                <h4 class="text-xl font-bold text-primary mb-3">
                     Crisis & Pivotal Moment Support
                 </h4>
-                <p class="text-gray-700">
+                <p class="text-gray-700 leading-relaxed">
                     When something breaks, blindsides you or shifts
                     unexpectedly. You get fast access, rapid clarity and
                     grounded guidance in the moment.
                 </p>
             </div>
-            <div
-                class="p-6 bg-white rounded-lg border border-subtle/20 shadow-sm"
-            >
-                <h4 class="text-xl font-bold text-primary mb-2">
+            <div class="p-8 bg-white rounded-xl border border-subtle/20 shadow-sm hover:shadow-md transition-shadow stagger-child relative overflow-hidden group">
+                <div class="absolute top-0 left-0 w-1 h-full bg-accent transition-transform transform scale-y-0 group-hover:scale-y-100 origin-bottom"></div>
+                <h4 class="text-xl font-bold text-primary mb-3">
                     Financial Discipline & Commercial Modelling
                 </h4>
-                <p class="text-gray-700">
+                <p class="text-gray-700 leading-relaxed">
                     Cashflow clarity, profitability resets, scenario planning
                     and simple frameworks for decision-making. I help founders
                     understand the story their numbers are telling and how to
@@ -219,331 +238,330 @@ import { Icon } from "astro-icon/components";
         </div>
     </div>
 
-    <div
-        class="bg-primary text-white -mx-4 md:-mx-12 px-4 md:px-12 py-16 mb-20"
-    >
+    <!-- Parallax Separator 4 -->
+    <div class="mb-20 fade-up -mx-4 md:-mx-12">
+        <ParallaxSection
+            image="/images/linda-growth-abstract.png"
+            height="h-[40vh]"
+            overlayClass="bg-main/30 mix-blend-multiply"
+        />
+    </div>
+
+    <div class="bg-primary text-white -mx-4 md:-mx-12 px-4 md:px-12 py-20 mb-20 fade-up">
         <div class="max-w-4xl mx-auto text-center">
-            <h3 class="text-2xl font-bold mb-6 text-white">Who I Work With</h3>
-            <p class="text-lg text-white/90 mb-8">
+            <h3 class="text-3xl font-bold mb-6 text-white tracking-tight">Who I Work With</h3>
+            <p class="text-xl text-white/90 mb-12">
                 Founders and Franchises across all stages of business:
             </p>
-            <div
-                class="flex flex-wrap justify-center gap-4 text-lg font-bold text-white"
-            >
-                <span>Start-Up</span>
-                <span class="text-white/30">→</span>
-                <span>Growth</span>
-                <span class="text-white/30">→</span>
-                <span>Stabilisation</span>
-                <span class="text-white/30">→</span>
-                <span>Scale</span>
-                <span class="text-white/30">→</span>
-                <span>Redesign</span>
-                <span class="text-white/30">→</span>
-                <span>Exit</span>
+            <div class="flex flex-wrap items-center justify-center gap-4 text-lg font-bold text-white mb-12 relative">
+                <!-- Decorative line behind items on larger screens -->
+                <div class="hidden md:block absolute top-1/2 left-10 right-10 h-0.5 bg-white/20 -z-10 -translate-y-1/2"></div>
+                
+                {[
+                    "Start-Up", 
+                    "Growth", 
+                    "Stabilisation", 
+                    "Scale", 
+                    "Redesign", 
+                    "Exit"
+                ].map((stage, index, array) => (
+                    <div class="flex items-center gap-4 group">
+                        <span class="bg-primary border-2 border-white/30 px-6 py-3 rounded-full hover:bg-white hover:text-primary hover:border-white transition-all duration-300">
+                            {stage}
+                        </span>
+                        {index < array.length - 1 && (
+                            <span class="text-white/40 group-hover:text-white/80 transition-colors md:hidden">→</span>
+                        )}
+                    </div>
+                ))}
             </div>
-            <p class="mt-8 text-white/80 italic">
+            <p class="mt-8 text-white/80 italic text-xl font-light">
                 We tailor the work to match the season your business is in, not
                 the other way around.
             </p>
         </div>
     </div>
 
-    <div class="max-w-4xl mx-auto mb-20">
-        <!-- Section 6: Pricing -->
-        <h3 class="text-2xl font-bold mb-4 text-primary">
-            Pricing & Ways to Work Together
-        </h3>
-        <p class="mb-8 text-gray-700 text-lg">
-            I take on a small number of founder-led and franchisee businesses
-            each year so the work stays deep, fast and commercially meaningful.
-            These are the key ways we can work together in 2026.
-        </p>
+    <div class="max-w-5xl mx-auto mb-20">
+        <!-- Section: Pricing -->
+        <div class="text-center mb-12 fade-up">
+            <h3 class="text-3xl font-bold text-primary">
+                Pricing & Ways to Work Together
+            </h3>
+            <div class="h-1 w-20 bg-accent mx-auto mt-6 mb-8 rounded"></div>
+            <p class="max-w-3xl mx-auto text-gray-700 text-lg leading-relaxed">
+                I take on a small number of founder-led and franchisee businesses
+                each year so the work stays deep, fast and commercially meaningful.
+                These are the key ways we can work together in 2026.
+            </p>
+        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16 stagger-parent">
             <!-- Tier 1 -->
-            <div
-                class="bg-white border border-subtle/20 rounded-xl p-6 hover:shadow-md transition-shadow"
-            >
-                <h4 class="text-xl font-bold text-primary mb-2">
+            <div class="bg-white border border-subtle/20 rounded-2xl p-8 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 stagger-child flex flex-col h-full">
+                <h4 class="text-2xl font-bold text-primary mb-3">
                     Advisory Role & Light Duties
                 </h4>
-                <p class="text-2xl font-bold text-accent mb-1">
-                    $1,000 <span class="text-sm font-normal text-gray-500"
-                        >per month</span
-                    >
-                </p>
-                <p class="text-sm text-gray-500 mb-4">
-                    Approx. 3 hours of support each month
-                </p>
-                <p class="text-gray-700 mb-6 text-sm">
+                <div class="mb-6 pb-6 border-b border-subtle/10 flex-grow-0">
+                    <p class="text-4xl font-black text-accent mb-2">
+                        $1,000 <span class="text-base font-normal text-gray-500">/mo</span>
+                    </p>
+                    <p class="text-sm font-medium text-subtle uppercase tracking-wider">
+                        ~ 3 hours of support
+                    </p>
+                </div>
+                <p class="text-gray-700 mb-8 leading-relaxed flex-grow">
                     For founders wanting simple clarity, direction and a
                     thinking partner.
                 </p>
 
-                <div class="space-y-4 text-sm">
+                <div class="space-y-6 text-sm mb-8">
                     <div>
-                        <strong class="block text-primary mb-1"
-                            >Includes:</strong
-                        >
-                        <div class="text-gray-600 space-y-1">
-                            <p>Monthly 60-minute session</p>
-                            <p>Up to 90 minutes implementation</p>
-                            <p>Email guidance</p>
-                            <p>No urgent or crisis support</p>
-                        </div>
+                        <strong class="block text-primary mb-3 uppercase tracking-wide text-xs">Includes</strong>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start gap-2"><Icon name="mdi:check" class="text-accent mt-0.5 w-4 h-4 shrink-0" /> Monthly 60-minute session</li>
+                            <li class="flex items-start gap-2"><Icon name="mdi:check" class="text-accent mt-0.5 w-4 h-4 shrink-0" /> Up to 90 minutes implementation</li>
+                            <li class="flex items-start gap-2"><Icon name="mdi:check" class="text-accent mt-0.5 w-4 h-4 shrink-0" /> Email guidance</li>
+                            <li class="flex items-start gap-2 text-subtle"><Icon name="mdi:close" class="mt-0.5 w-4 h-4 shrink-0" /> No urgent or crisis support</li>
+                        </ul>
                     </div>
                     <div>
-                        <strong class="block text-primary mb-1"
-                            >Examples:</strong
-                        >
-                        <div class="text-gray-600 space-y-1">
-                            <p>Drafting important copy</p>
-                            <p>Creating simple systems</p>
-                            <p>Reviewing messaging/plans</p>
-                            <p>Stuck decisions</p>
-                        </div>
+                        <strong class="block text-primary mb-3 uppercase tracking-wide text-xs">Examples</strong>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-subtle/40"></div> Drafting important copy</li>
+                            <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-subtle/40"></div> Creating simple systems</li>
+                            <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-subtle/40"></div> Reviewing messaging/plans</li>
+                            <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-subtle/40"></div> Stuck decisions</li>
+                        </ul>
                     </div>
                 </div>
-                <div
-                    class="mt-6 pt-4 border-t border-subtle/10 text-xs text-gray-500 italic"
-                >
+                <div class="mt-auto pt-6 border-t border-subtle/10 text-sm text-gray-500 italic text-center bg-surface/30 rounded-lg p-4">
                     Best for calmer seasons, maintenance mode or past clients
                     wanting steady support.
                 </div>
             </div>
 
             <!-- Tier 2 -->
-            <div
-                class="border-2 border-accent/20 bg-accent/5 rounded-xl p-6 relative shadow-sm"
-            >
-                <div
-                    class="absolute top-0 right-0 bg-accent text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg"
-                >
-                    POPULAR
+            <div class="border-2 border-accent bg-accent/5 rounded-2xl p-8 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 stagger-child relative flex flex-col h-full transform lg:scale-105 z-10 shadow-lg">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-white text-sm font-bold px-6 py-1.5 rounded-full shadow-md uppercase tracking-widest whitespace-nowrap">
+                    Most Popular
                 </div>
-                <h4 class="text-xl font-bold text-primary mb-2">
+                <h4 class="text-2xl font-bold text-primary mb-3 mt-2">
                     Strategy, Support & Implementation
                 </h4>
-                <p class="text-2xl font-bold text-accent mb-1">
-                    $2,000 <span class="text-sm font-normal text-gray-500"
-                        >per month</span
-                    >
-                </p>
-                <p class="text-sm text-gray-500 mb-4">
-                    Approx. 6.5 hours of support each month
-                </p>
-                <p class="text-gray-700 mb-6 text-sm">
+                <div class="mb-6 pb-6 border-b border-accent/20 flex-grow-0">
+                    <p class="text-4xl font-black text-accent mb-2">
+                        $2,000 <span class="text-base font-normal text-gray-500">/mo</span>
+                    </p>
+                    <p class="text-sm font-medium text-subtle uppercase tracking-wider">
+                        ~ 6.5 hours of support
+                    </p>
+                </div>
+                <p class="text-gray-900 font-medium mb-8 leading-relaxed flex-grow">
                     For businesses wanting clarity, momentum and some hands-on
                     help and implementation.
                 </p>
 
-                <div class="space-y-4 text-sm">
+                <div class="space-y-6 text-sm mb-8">
                     <div>
-                        <strong class="block text-primary mb-1"
-                            >Includes everything in Advisory, plus:</strong
-                        >
-                        <div class="text-gray-600 space-y-1">
-                            <p>Fortnightly check-ins</p>
-                            <p>Message access for quick questions</p>
-                            <p>Up to 4.5 hours of implementation</p>
-                        </div>
+                        <strong class="block text-primary mb-3 uppercase tracking-wide text-xs">Everything in Advisory, plus:</strong>
+                        <ul class="text-gray-700 font-medium space-y-2">
+                            <li class="flex items-start gap-2"><Icon name="mdi:check-circle" class="text-accent mt-0.5 w-4 h-4 shrink-0" /> Fortnightly check-ins</li>
+                            <li class="flex items-start gap-2"><Icon name="mdi:check-circle" class="text-accent mt-0.5 w-4 h-4 shrink-0" /> Message access for quick questions</li>
+                            <li class="flex items-start gap-2"><Icon name="mdi:check-circle" class="text-accent mt-0.5 w-4 h-4 shrink-0" /> Up to 4.5 hours of implementation</li>
+                        </ul>
                     </div>
                     <div>
-                        <strong class="block text-primary mb-1"
-                            >Expanded Examples:</strong
-                        >
-                        <div class="text-gray-600 space-y-1">
-                            <p>Strategy around organisational roles</p>
-                            <p>Drafting sensitive emails</p>
-                            <p>Planning difficult conversations</p>
-                            <p>Improving small workflows</p>
-                        </div>
+                        <strong class="block text-primary mb-3 uppercase tracking-wide text-xs">Expanded Examples</strong>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-accent/60"></div> Strategy around organisational roles</li>
+                            <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-accent/60"></div> Drafting sensitive emails</li>
+                            <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-accent/60"></div> Planning difficult conversations</li>
+                            <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-accent/60"></div> Improving small workflows</li>
+                        </ul>
                     </div>
                 </div>
-                <div
-                    class="mt-6 pt-4 border-t border-accent/10 text-xs text-gray-500 italic"
-                >
+                <div class="mt-auto pt-6 border-t border-accent/20 text-sm font-medium text-primary text-center bg-white rounded-lg p-4 shadow-sm border border-accent/10">
                     Best for steady but growing businesses and founders wanting
                     structure and regular contact.
                 </div>
             </div>
 
             <!-- Tier 3 -->
-            <div
-                class="bg-white border border-subtle/20 rounded-xl p-6 hover:shadow-md transition-shadow"
-            >
-                <h4 class="text-xl font-bold text-primary mb-2">
+            <div class="bg-white border border-subtle/20 rounded-2xl p-8 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 stagger-child flex flex-col h-full">
+                <h4 class="text-2xl font-bold text-primary mb-3">
                     Full Partner
                 </h4>
-                <p class="text-2xl font-bold text-accent mb-1">
-                    $4,000 <span class="text-sm font-normal text-gray-500"
-                        >per month</span
-                    >
-                </p>
-                <p class="text-sm text-gray-500 mb-4">
-                    Approx. 14 hours of support each month
-                </p>
-                <p class="text-gray-700 mb-6 text-sm">
+                <div class="mb-6 pb-6 border-b border-subtle/10 flex-grow-0">
+                    <p class="text-4xl font-black text-accent mb-2">
+                        $4,000 <span class="text-base font-normal text-gray-500">/mo</span>
+                    </p>
+                    <p class="text-sm font-medium text-subtle uppercase tracking-wider">
+                        ~ 14 hours of support
+                    </p>
+                </div>
+                <p class="text-gray-700 mb-8 leading-relaxed flex-grow">
                     For founders who want someone properly in their corner every
                     week.
                 </p>
 
-                <div class="space-y-4 text-sm">
+                <div class="space-y-6 text-sm mb-8">
                     <div>
-                        <strong class="block text-primary mb-1"
-                            >Includes everything in Strategy & Support, plus:</strong
-                        >
-                        <div class="text-gray-600 space-y-1">
-                            <p>Weekly check-ins</p>
-                            <p>Real-time support & priority access</p>
-                            <p>Up to 10 hours implementation</p>
-                            <p>Team support</p>
-                        </div>
+                        <strong class="block text-primary mb-3 uppercase tracking-wide text-xs">Everything in Strategy & Support, plus:</strong>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start gap-2"><Icon name="mdi:check" class="text-accent mt-0.5 w-4 h-4 shrink-0" /> Weekly check-ins</li>
+                            <li class="flex items-start gap-2"><Icon name="mdi:check" class="text-accent mt-0.5 w-4 h-4 shrink-0" /> Real-time support & priority access</li>
+                            <li class="flex items-start gap-2"><Icon name="mdi:check" class="text-accent mt-0.5 w-4 h-4 shrink-0" /> Up to 10 hours implementation</li>
+                            <li class="flex items-start gap-2"><Icon name="mdi:check" class="text-accent mt-0.5 w-4 h-4 shrink-0" /> Team support</li>
+                        </ul>
                     </div>
                     <div>
-                        <strong class="block text-primary mb-1"
-                            >Expanded Examples:</strong
-                        >
-                        <div class="text-gray-600 space-y-1">
-                            <p>Performance plans & team issues</p>
-                            <p>Restructures & major hires</p>
-                            <p>Drafting professional letters</p>
-                            <p>Building systems after breakdowns</p>
-                        </div>
+                        <strong class="block text-primary mb-3 uppercase tracking-wide text-xs">Expanded Examples</strong>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-subtle/40"></div> Performance plans & team issues</li>
+                            <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-subtle/40"></div> Restructures & major hires</li>
+                            <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-subtle/40"></div> Drafting professional letters</li>
+                            <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-subtle/40"></div> Building systems after breakdowns</li>
+                        </ul>
                     </div>
                 </div>
-                <div
-                    class="mt-6 pt-4 border-t border-subtle/10 text-xs text-gray-500 italic"
-                >
+                <div class="mt-auto pt-6 border-t border-subtle/10 text-sm text-gray-500 italic text-center bg-surface/30 rounded-lg p-4">
                     Best for growth, change, complexity or founder overload.
                 </div>
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <div
-                class="bg-white border border-subtle/20 rounded-xl p-6 hover:shadow-md transition-shadow"
-            >
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 stagger-parent">
+            <div class="bg-surface/50 border border-subtle/20 rounded-xl p-8 hover:bg-white hover:shadow-md transition-all stagger-child">
+                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm">
+                    <Icon name="mdi:clock-outline" class="w-6 h-6 text-accent" />
+                </div>
                 <h4 class="text-xl font-bold text-primary mb-2">
                     One-Off Sessions
                 </h4>
-                <p class="text-2xl font-bold text-accent mb-1">
-                    $350 <span class="text-sm font-normal text-gray-500"
-                        >per hour</span
-                    >
+                <p class="text-2xl font-bold text-accent mb-4">
+                    $350 <span class="text-sm font-normal text-gray-500">/hr</span>
                 </p>
-                <p class="text-gray-700 mb-2 text-sm">
+                <p class="text-gray-700 mb-4 leading-relaxed">
                     A single, focused 60-minute session for a decision, issue,
                     opportunity or moment of overwhelm.
                 </p>
-                <p class="text-sm text-gray-500 italic">
-                    Productive, impactful, no follow-up or ongoing support.
+                <p class="text-sm font-medium text-primary bg-primary/5 px-4 py-2 rounded inline-block">
+                    Productive, impactful, no follow-up.
                 </p>
             </div>
-            <div
-                class="bg-white border border-subtle/20 rounded-xl p-6 hover:shadow-md transition-shadow"
-            >
-                <h4 class="text-xl font-bold text-primary mb-2">
+            <div class="bg-surface/50 border border-subtle/20 rounded-xl p-8 hover:bg-white hover:shadow-md transition-all stagger-child">
+                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm">
+                    <Icon name="mdi:target" class="w-6 h-6 text-accent" />
+                </div>
+                <h4 class="text-xl font-bold text-primary mb-4">
                     Focus Streams
                 </h4>
-                <p class="text-gray-700 mb-2 text-sm">
+                <p class="text-gray-700 mb-6 leading-relaxed">
                     Within any monthly plan, we can dedicate a quarter or
                     half-year to a specific theme (e.g., Culture, Hiring,
                     Financial Clarity, Systems, Leadership).
                 </p>
-                <p class="text-sm text-gray-500 italic">
-                    You choose the focus. We build the structure around it.
+                <p class="text-sm font-medium text-primary bg-primary/5 px-4 py-2 rounded inline-block">
+                    You choose the focus. We build the structure.
                 </p>
             </div>
         </div>
 
-        <div class="bg-primary/5 p-6 rounded-lg text-center">
-            <h4 class="text-lg font-bold text-primary mb-4">
-                Optional Add-Ons
-            </h4>
-            <div class="flex flex-col items-center gap-y-3 text-gray-700">
-                <span>Team Workshop / Performance Reset — $1,500</span>
-                <span>Systems or Structure Audit — $2,000</span>
-                <span>Crisis Support Week — $1,000</span>
-                <span>Founder Planning Half-Day — $1,500</span>
+        <div class="bg-primary text-white p-8 md:p-12 rounded-2xl text-center shadow-lg fade-up relative overflow-hidden">
+            <!-- Background pattern -->
+            <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
+            
+            <div class="relative z-10">
+                <h4 class="text-2xl font-bold mb-8">
+                    Optional Add-Ons
+                </h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
+                    <div class="bg-white/10 backdrop-blur border border-white/20 p-4 rounded-lg flex items-center justify-between group hover:bg-white/20 transition-colors">
+                        <span class="font-medium">Team Workshop / Performance Reset</span>
+                        <span class="text-accent bg-white px-3 py-1 rounded-full text-sm font-bold group-hover:scale-105 transition-transform">$1,500</span>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur border border-white/20 p-4 rounded-lg flex items-center justify-between group hover:bg-white/20 transition-colors">
+                        <span class="font-medium">Systems or Structure Audit</span>
+                        <span class="text-accent bg-white px-3 py-1 rounded-full text-sm font-bold group-hover:scale-105 transition-transform">$2,000</span>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur border border-white/20 p-4 rounded-lg flex items-center justify-between group hover:bg-white/20 transition-colors">
+                        <span class="font-medium">Crisis Support Week</span>
+                        <span class="text-accent bg-white px-3 py-1 rounded-full text-sm font-bold group-hover:scale-105 transition-transform">$1,000</span>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur border border-white/20 p-4 rounded-lg flex items-center justify-between group hover:bg-white/20 transition-colors">
+                        <span class="font-medium">Founder Planning Half-Day</span>
+                        <span class="text-accent bg-white px-3 py-1 rounded-full text-sm font-bold group-hover:scale-105 transition-transform">$1,500</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="max-w-4xl mx-auto mb-20 space-y-20">
-        <!-- Section 7: How I Work -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <!-- Parallax Separator for final section -->
+    <div class="mb-20 fade-up -mx-4 md:-mx-12">
+        <div class="h-[2px] w-full bg-gradient-to-r from-transparent via-accent/30 to-transparent"></div>
+    </div>
+
+    <div class="max-w-5xl mx-auto space-y-24 mb-24">
+        <!-- Section: How I Work -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center fade-up">
             <div>
-                <h3 class="text-2xl font-bold mb-6 text-primary">How I Work</h3>
-                <ul class="space-y-4 text-lg text-gray-700">
-                    <li class="flex items-start gap-3">
-                        <Icon
-                            name="mdi:check"
-                            class="w-6 h-6 text-accent shrink-0 mt-1"
-                        />
-                        <span>I’m not a traditional coach.</span>
+                <h3 class="text-3xl font-bold mb-8 text-primary">How I Work</h3>
+                <ul class="space-y-6 text-lg text-gray-700">
+                    <li class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center mt-1">
+                            <Icon name="mdi:close" class="w-5 h-5 text-accent" />
+                        </div>
+                        <span class="pt-1">I’m <strong class="text-primary font-bold">not</strong> a traditional coach.</span>
                     </li>
-                    <li class="flex items-start gap-3">
-                        <Icon
-                            name="mdi:check"
-                            class="w-6 h-6 text-accent shrink-0 mt-1"
-                        />
-                        <span
-                            >I’m not a consultant with a binder of templates.</span
-                        >
+                    <li class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center mt-1">
+                            <Icon name="mdi:close" class="w-5 h-5 text-accent" />
+                        </div>
+                        <span class="pt-1">I’m <strong class="text-primary font-bold">not</strong> a consultant with a binder of templates.</span>
                     </li>
-                    <li class="flex items-start gap-3">
-                        <Icon
-                            name="mdi:check"
-                            class="w-6 h-6 text-accent shrink-0 mt-1"
-                        />
-                        <span>I don’t disappear between sessions.</span>
+                    <li class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center mt-1">
+                            <Icon name="mdi:close" class="w-5 h-5 text-accent" />
+                        </div>
+                        <span class="pt-1">I <strong class="text-primary font-bold">don’t</strong> disappear between sessions.</span>
                     </li>
                 </ul>
-                <p class="mt-6 text-gray-700 leading-relaxed">
+                <div class="mt-10 p-6 bg-surface rounded-xl border-l-4 border-accent text-primary font-medium text-lg leading-relaxed shadow-sm">
                     I work beside you, the way small business actually works:
                     conversations, moments, decisions, mess, clarity, forward
                     motion. You get my brain, my experience, my honesty and my
                     calm, centred influence.
-                </p>
+                </div>
             </div>
-            <div class="bg-accent/10 p-8 rounded-xl">
-                <h4 class="text-xl font-bold mb-4 text-primary">
-                    Transformational Work (Optional)
+            
+            <div class="bg-gradient-to-br from-white to-surface p-10 rounded-2xl border border-subtle/20 shadow-lg relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-8 opacity-5">
+                    <Icon name="mdi:autorenew" class="w-32 h-32" />
+                </div>
+                <h4 class="text-2xl font-bold mb-6 text-primary flex items-center gap-3 relative z-10">
+                    Transformational Work <span class="text-sm font-normal text-subtle px-3 py-1 bg-white rounded-full border border-subtle/20">(Optional)</span>
                 </h4>
-                <p class="text-gray-700 mb-4 text-sm leading-relaxed">
-                    Alongside my commercial work, I’m also trained in William
-                    Whitecloud’s Creative Development Coaching. Some of the most
-                    successful CEO’s in the world have used this style of
-                    coaching and that of Robert Fritz.
-                </p>
-                <p class="text-gray-700 text-sm leading-relaxed">
-                    This work is rooted in deeper, identity-level work for
-                    founders seeking clarity and alignment from the inside out.
-                    Often founders are drawn to this type of work when they
-                    recognise they are the bottleneck. If this sounds like you,
-                    lets chat to see if this style of coaching is what you
-                    actually need before engaging in strategic advisory.
-                </p>
+                <div class="space-y-5 text-gray-700 leading-relaxed relative z-10">
+                    <p>
+                        Alongside my commercial work, I’m also trained in William
+                        Whitecloud’s Creative Development Coaching. Some of the most
+                        successful CEO’s in the world have used this style of
+                        coaching and that of Robert Fritz.
+                    </p>
+                    <p>
+                        This work is rooted in deeper, identity-level work for
+                        founders seeking clarity and alignment from the inside out.
+                        Often founders are drawn to this type of work when they
+                        recognise <strong class="text-primary">they are the bottleneck</strong>.
+                    </p>
+                    <div class="bg-white/60 p-4 text-sm font-medium rounded-lg mt-4 border border-white">
+                        If this sounds like you, lets chat to see if this style of coaching is what you
+                        actually need before engaging in strategic advisory.
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <!-- Section 8: Next Steps -->
-        <div class="text-center max-w-2xl mx-auto">
-            <h3 class="text-2xl font-bold mb-6 text-primary">Next Steps</h3>
-            <p class="text-lg text-gray-700 mb-8">
-                If one of the options feels right, or if you're unsure which
-                level of support fits your business season, get in touch. We’ll
-                talk through where you’re at, what you want next, and what
-                structure will serve you best.
-            </p>
-            <a
-                href="/contact"
-                class="inline-flex items-center justify-center px-8 py-3 bg-accent text-white font-medium rounded-lg hover:bg-black transition-colors"
-            >
-                Get In Touch
-            </a>
         </div>
     </div>
-</ServiceLayout>
+</ServicePageLayout>

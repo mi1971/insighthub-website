@@ -14,15 +14,14 @@ import { Icon } from "astro-icon/components";
         --color-surface: #f8f9fa; /* Very light cool grey */
         --color-primary: #000000;
         --color-subtle: #997f4e; /* Darker Gold */
-        --color-accent: #3b4e72;
+        --color-accent: #1e3a8a;
     }
 </style>
 
 <ServicePageLayout
     title="Broker Growth Framework"
     subtitle="Your Marketing Assistant for Old School Relationship Building"
-    logoImage="/images/logo-bgf-brown.png"
-    heroImage="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=2000"
+    heroImage="https://images.unsplash.com/photo-1635405074683-96d6921a2a68?w=2000&auto=format&fit=crop&q=80"
     features={[
         "Specialist Relationship Manager",
         "Tailored Marketing Materials",
@@ -59,14 +58,7 @@ import { Icon } from "astro-icon/components";
         </div>
     </div>
 
-    <!-- Divider 1 -->
-    <div class="mb-20 fade-up -mx-4 md:-mx-12">
-        <ParallaxSection
-            image="/bgf-divider-1.png"
-            height="h-[40vh]"
-            overlay={false}
-        />
-    </div>
+
 
     <!-- How It Works Section -->
     <div class="mb-20">
@@ -127,7 +119,7 @@ import { Icon } from "astro-icon/components";
     </div>
 
     <!-- Divider 2 -->
-    <div class="mb-20 fade-up -mx-4 md:-mx-12">
+    <div class="mb-20 fade-up w-screen relative left-1/2 -translate-x-1/2">
         <ParallaxSection
             image="/bgf-divider-2.png"
             height="h-[40vh]"
@@ -201,7 +193,7 @@ import { Icon } from "astro-icon/components";
     </div>
 
     <!-- Divider 3 -->
-    <div class="mb-20 fade-up -mx-4 md:-mx-12">
+    <div class="w-screen relative left-1/2 -translate-x-1/2">
         <ParallaxSection
             image="/bgf-divider-3.png"
             height="h-[40vh]"
@@ -210,12 +202,13 @@ import { Icon } from "astro-icon/components";
     </div>
 
     <!-- Momentum and ROI Section -->
-    <div class="bg-primary text-white p-8 md:p-16 rounded-3xl fade-up shadow-xl mb-20 relative overflow-hidden">
+    <div class="bg-primary text-white w-screen relative left-1/2 -translate-x-1/2 px-4 md:px-12 py-20 overflow-hidden">
         <!-- Abstract shape background -->
         <div class="absolute top-0 right-0 w-64 h-64 bg-accent/30 rounded-full mix-blend-screen filter blur-3xl translate-x-1/2 -translate-y-1/2"></div>
         <div class="absolute bottom-0 left-0 w-96 h-96 bg-subtle/20 rounded-full mix-blend-screen filter blur-3xl -translate-x-1/2 translate-y-1/2"></div>
         
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
+        <div class="max-w-5xl mx-auto relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div>
                 <h2 class="text-4xl font-bold mb-6 text-white tracking-tight">
                     Momentum & Consistency
@@ -287,10 +280,11 @@ import { Icon } from "astro-icon/components";
                 </a>
             </div>
         </div>
+        </div>
     </div>
 
     <!-- Divider 4 -->
-    <div class="mb-20 fade-up -mx-4 md:-mx-12">
+    <div class="mb-20 w-screen relative left-1/2 -translate-x-1/2">
         <ParallaxSection
             image="/bgf-divider-1.png"
             height="h-[40vh]"

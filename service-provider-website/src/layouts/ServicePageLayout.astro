@@ -46,16 +46,16 @@ const {
                     class="h-16 md:h-20 mx-auto mb-6 invert opacity-90 fade-up"
                 />
             )}
-            <h1 class="text-5xl md:text-7xl font-bold tracking-tighter mb-4 fade-up">
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tighter mb-4 fade-up hero-glow-text">
                 {title}
             </h1>
-            <p class="text-xl md:text-2xl text-surface max-w-2xl mx-auto fade-up">
+            <p class="text-xl md:text-2xl text-surface max-w-2xl mx-auto fade-up hero-glow-text">
                 {subtitle}
             </p>
             <div class="mt-8 fade-up">
                 <a
                     href="#overview"
-                    class="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm uppercase tracking-widest"
+                    class="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm uppercase tracking-widest hero-glow-text"
                 >
                     <span>Explore</span>
                     <Icon name="mdi:chevron-down" class="w-5 h-5 animate-bounce" />
@@ -132,6 +132,10 @@ const {
     @keyframes heroFloat {
         0%, 100% { transform: translateY(-10%); }
         50% { transform: translateY(-8%); }
+    }
+    .hero-glow-text {
+        text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7), 0 2px 4px rgba(0, 0, 0, 0.5);
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
     }
 </style>
 

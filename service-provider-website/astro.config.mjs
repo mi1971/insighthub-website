@@ -10,7 +10,9 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.insighthub.au',
+  // www.insighthub.au 301s to this apex host, and extensionless paths 301 to a trailing slash.
+  site: 'https://insighthub.au',
+  trailingSlash: 'always',
   vite: {
     plugins: [tailwindcss()]
   },

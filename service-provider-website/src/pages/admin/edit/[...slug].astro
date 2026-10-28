@@ -7,7 +7,7 @@ import matter from "gray-matter";
 export const prerender = false;
 
 if (!Astro.cookies.has("auth_token")) {
-    return Astro.redirect("/admin/login");
+    return Astro.redirect("/admin/login/");
 }
 
 const { slug } = Astro.params;
@@ -55,7 +55,7 @@ if (!isNew && slug) {
             <h1 class="text-3xl font-bold text-gray-900">
                 {isNew ? "Create New Post" : `Editing: ${slug}`}
             </h1>
-            <a href="/admin" class="text-[#6B4E3D] hover:opacity-80"
+            <a href="/admin/" class="text-[#6B4E3D] hover:opacity-80"
                 >Back to Dashboard</a
             >
         </div>

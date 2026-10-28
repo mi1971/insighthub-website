@@ -17,7 +17,7 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<BaseLayout title={`${post.data.title} | Antigravity Blog`}>
+<BaseLayout title={`${post.data.title} | InsightHub Blog`} description={post.data.description}>
     <article>
         <div class="w-full h-[60vh] relative">
             <div class="absolute inset-0 bg-accent/60 z-10"></div>

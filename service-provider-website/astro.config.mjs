@@ -17,7 +17,15 @@ export default defineConfig({
 
   output: 'static',
 
-  integrations: [icon(), sitemap()],
+  integrations: [
+    icon(),
+    sitemap({
+      filter: (page) => {
+        const { pathname } = new URL(page);
+        return !pathname.startsWith("/admin") && !pathname.startsWith("/palette");
+      },
+    }),
+  ],
 
   adapter: netlify()
 });

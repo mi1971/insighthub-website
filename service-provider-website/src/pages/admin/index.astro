@@ -9,7 +9,7 @@ import {
 export const prerender = false;
 
 if (!Astro.cookies.has("auth_token")) {
-    return Astro.redirect("/admin/login");
+    return Astro.redirect("/admin/login/");
 }
 
 let posts: GitHubDirectoryItem[] = [];
@@ -34,7 +34,7 @@ try {
             <div class="flex justify-between items-center mb-6">
                 <h1 class="text-3xl font-bold text-gray-900">Blog Posts</h1>
                 <a
-                    href="/admin/edit/new"
+                    href="/admin/edit/new/"
                     class="bg-[#6B4E3D] hover:opacity-90 text-white font-bold py-2 px-4 rounded"
                 >
                     Create New Post

@@ -4,7 +4,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 export const prerender = false;
 
 if (Astro.cookies.has("auth_token")) {
-    return Astro.redirect("/admin");
+    return Astro.redirect("/admin/");
 }
 ---
 
